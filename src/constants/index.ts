@@ -6,7 +6,8 @@ import {
   Mail,
   MapPin,
   Phone,
-  Rocket, Users
+  Rocket,
+  Users,
 } from "lucide-react";
 import type {
   Certification,
@@ -20,19 +21,23 @@ import type {
   Testimonial,
 } from "../types";
 
-import project01 from "/projects/project01.jpg";
-import project02 from "/projects/project02.jpg";
-import project03 from "/projects/project03.jpg";
-import project04 from "/projects/project04.jpg";
+import project01Png from "/projects/project01.jpg";
+import project02Png from "/projects/project02.jpg";
+import project03Png from "/projects/project03.jpg";
+import project04Png from "/projects/project04.jpg";
+import project01Avif from "/projects/project01.avif";
+import project02Avif from "/projects/project02.avif";
+import project03Avif from "/projects/project03.avif";
+import project04Avif from "/projects/project04.avif";
 
-import certif1Png from '/certifications/certif1.png';
-import certif2Png from '/certifications/certif2.png';
-import certif3Png from '/certifications/certif3.png';
-import certif4Png from '/certifications/certif4.png';
-import certif1Avif from '/certifications/certif1.avif';
-import certif2Avif from '/certifications/certif2.avif';
-import certif3Avif from '/certifications/certif3.avif';
-import certif4Avif from '/certifications/certif4.avif';
+import certif1Png from "/certifications/certif1.png";
+import certif2Png from "/certifications/certif2.png";
+import certif3Png from "/certifications/certif3.png";
+import certif4Png from "/certifications/certif4.png";
+import certif1Avif from "/certifications/certif1.avif";
+import certif2Avif from "/certifications/certif2.avif";
+import certif3Avif from "/certifications/certif3.avif";
+import certif4Avif from "/certifications/certif4.avif";
 
 import profile01 from "/profile-photo1.jpg";
 
@@ -68,8 +73,8 @@ export const socialLinks: SocialLink[] = [
   {
     name: "Linkedin",
     icon: Linkedin,
-    href: "https://www.linkedin.com/in/alejandro-guzm%C3%A1n-rodr%C3%ADguez-3985b23b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  }
+    href: "https://www.linkedin.com/in/alejandro-guzm%C3%A1n-rodr%C3%ADguez-3985b23b3",
+  },
 ];
 
 export const skills: string[] = [
@@ -122,8 +127,9 @@ export const projects: Project[] = [
     title: "Beats 3",
     description:
       "Responsive product landing page inspired by Beats headphones, focused on modern UI design, structured layouts, and clear product presentation.",
-    image: project01,
-    tags: ["Vite", "React", "JavaScript","ESLint", "Tailwind CSS", "GSAP"],
+    imagePng: project01Png,
+    imageAvif: project01Avif,
+    tags: ["Vite", "React", "JavaScript", "ESLint", "Tailwind CSS", "GSAP"],
     link: "https://alejandro-gr01.github.io/beats-3-landing/",
     github: "https://github.com/Alejandro-GR01/beats-3-landing",
   },
@@ -131,7 +137,8 @@ export const projects: Project[] = [
     title: "GPT-3",
     description:
       "Responsive landing page inspired by GPT-3 and AI platforms, focused on clean UI structure, organized content sections, and modern frontend design.",
-    image: project02,
+    imagePng: project02Png,
+    imageAvif: project02Avif,
     tags: ["Vite", "React", "JavaScript", "ESLint", "Tailwind CSS", "GSAP"],
     link: "https://alejandro-gr01.github.io/gpt3-landing/",
     github: "https://github.com/Alejandro-GR01/gpt3-landing",
@@ -140,7 +147,8 @@ export const projects: Project[] = [
     title: "MacBook Pro",
     description:
       "Interactive product landing page featuring 3D visualization and animations, built with React, Three.js, and GSAP, focused on modern UI, smooth transitions, and responsive design.",
-    image: project03,
+    imagePng: project03Png,
+    imageAvif: project03Avif,
     tags: [
       "Vite",
       "React",
@@ -158,7 +166,8 @@ export const projects: Project[] = [
     title: "HooBank",
     description:
       "Responsive fintech landing page focused on modern UI design, structured components, and clear presentation of digital financial services.",
-    image: project04,
+    imagePng: project04Png,
+    imageAvif: project04Avif,
     tags: ["Vite", "React", "JavaScript", "Tailwind CSS", "GSAP", "ESLint"],
     link: "https://alejandro-gr01.github.io/hoobank-landing/",
     github: "https://github.com/Alejandro-GR01/hoobank-landing",
@@ -245,7 +254,6 @@ export const certifications: Certification[] = [
     period: "12/24 - 3/25",
     description:
       "Interactive tutorial teaching TypeScript fundamentals through practical exercises. Covers typing variables, functions, and errors while introducing modern tooling. Builds a solid foundation for confident use of TypeScript in real-world projects.",
-
   },
   {
     name: "Solving TypeScript Errors",
@@ -256,7 +264,6 @@ export const certifications: Certification[] = [
     period: "1/25 - 3/25",
     description:
       "Hands-on tutorial for identifying and fixing common TypeScript errors. Learn to interpret compiler messages and apply correct type solutions. Builds debugging skills and confidence in real-world TypeScript projects.",
- 
   },
   {
     name: "React Router",
@@ -267,7 +274,6 @@ export const certifications: Certification[] = [
     period: "8/2025 - 10/25",
     description:
       "Course focused on implementing client-side routing in React applications. Covers navigation, dynamic routes, route protection, and layout structuring with React Router. Strengthens skills for building scalable and well-structured React applications.",
- 
   },
   {
     name: "TanStack Query",
@@ -278,6 +284,5 @@ export const certifications: Certification[] = [
     period: "10/25 - 11/25",
     description:
       "Focused on efficient data fetching and server-state management in React using TanStack Query. Covers caching strategies, mutations, background refetching, and API synchronization. Emphasizes building scalable and performant applications with modern data-handling patterns.",
- 
   },
 ];

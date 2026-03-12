@@ -2,10 +2,11 @@ import { ChevronDown, LucideArrowRight, LucideDownload } from "lucide-react";
 import { skills, socialLinks } from "../constants";
 
 import heroBg from "/hero-bg.jpg";
-import profilFoto from "/profile-photo.png";
+import profilFotoPng from "/profile-photo.png";
+import profilFotoAvif from "/profile-photo.avif";
 import ButtonAnchor from "../components/ButtonAnchor";
 import AnimatedBorderAnchor from "../components/AnimatedBorderAnchor";
-import CV from '/cv.pdf';
+import CV from "/cv.pdf";
 
 const Hero = () => {
   return (
@@ -37,22 +38,27 @@ const Hero = () => {
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in_short  animation-delay-100">
-                Turning{' '}  
-                 <span className="text-primary glow-text animate-glow-shutDown">ideas</span>
+                Turning{" "}
+                <span className="text-primary glow-text animate-glow-shutDown">
+                  ideas
+                </span>
                 <br />
-                into modern web {' '}
-                 <span className="text-primary glow-text  animate-glow-shutDown">experiences.</span>
+                into modern web{" "}
+                <span className="text-primary glow-text  animate-glow-shutDown">
+                  experiences.
+                </span>
                 <br />
                 {/* <span className="font-serif italic font-normal text-white">
                   precision
                 </span> */}
               </h1>
               <p className="text-lg text-muted-foreground max-w-xl animate-fade-in_short  animation-delay-200">
-                Hi, I'm {' '}
+                Hi, I'm{" "}
                 <b className="text-foreground/80 font-medium">
                   Alejandro Guzman
                 </b>
-                . I build scalable and high-performance web applications using React and TypeScript.
+                . I build scalable and high-performance web applications using
+                React and TypeScript.
               </p>
             </div>
 
@@ -66,7 +72,10 @@ const Hero = () => {
                 Contact Me <LucideArrowRight className="w-5 h-5" />
               </ButtonAnchor>
 
-              <AnimatedBorderAnchor href={CV} download="CV-Alejandro_Guzmán_Rodríguez.pdf">
+              <AnimatedBorderAnchor
+                href={CV}
+                download="CV-Alejandro_Guzmán_Rodríguez.pdf"
+              >
                 <LucideDownload className="w-5 h-5" />
                 Download CV
               </AnimatedBorderAnchor>
@@ -96,11 +105,14 @@ const Hero = () => {
             <div className="relative max-w-md mx-auto">
               <div className="absolute w-full h-full  rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
               <div className="relative glass rounded-3xl p-0.5 glow-border">
-                <img
-                  src={profilFoto}
-                  alt="Alejandro Guzman"
-                  className="w-full aspect-4/5 object-cover rounded-2xl"
-                />
+                <picture>
+                  <source srcSet={profilFotoAvif} type="image/avif" />
+                  <img
+                    src={profilFotoPng}
+                    alt="Alejandro Guzman"
+                    className="w-full aspect-4/5 object-cover rounded-2xl"
+                  />
+                </picture>
                 <div className="absolute inset-0 animate-fade-in_short animation-delay-600">
                   {/* Floating Badge */}
 

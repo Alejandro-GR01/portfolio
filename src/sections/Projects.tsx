@@ -62,11 +62,14 @@ const Projects = () => {
               }}
             >
               <div className="relative overflow-hidden aspect-video">
+                <picture>
+                  <source srcSet={project.imageAvif} type="image/avif" />
                 <img
-                  src={project.image}
+                  src={project.imagePng}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                </picture>
                 <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to bg-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-700 " />
 
                 {/* overlay Links */}

@@ -24,7 +24,8 @@ export type HighlightAbout = {
 export type Project = {
   title: string;
   description: string;
-  image: string;
+  imagePng: string;
+  imageAvif: string;
   tags: string[];
   link: string,
   github: string
