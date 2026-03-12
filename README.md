@@ -15,7 +15,7 @@ Construido con **React**, **TypeScript** y **Tailwind CSS**, el portafolio desta
 
 ## 🌍 Live Demo
 
-👉 Visita el sitio en vivo: **[https://alejandro-portfolio.vercel.app](https://alejandro-portfolio.vercel.app)**
+👉 Visita el sitio en vivo: **[https://alejandro-gr01.github.io/portfolio/](https://alejandro-gr01.github.io/portfolio/)**
 
 ---
 
