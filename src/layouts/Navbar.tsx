@@ -60,6 +60,8 @@ const Navbar = () => {
           <picture>
             <source srcSet={logoAvif} type="image/avif" />
             <img
+            fetchPriority="high"
+            loading="eager"
               src={logoPng}
               alt="<AGR/>"
               className="w-auto h-7 md:h-9 drop-shadow-lg/30  drop-shadow-primary "

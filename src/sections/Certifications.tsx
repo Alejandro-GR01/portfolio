@@ -78,6 +78,7 @@ const Certifications = () => {
                 <picture>
                   <source srcSet={certif.imageAvif} type="image/avif" />
                   <img
+                  loading="lazy"
                     src={certif.imagePng}
                     alt={certif.name}
                     className="w-full h-full object-cover transition-transform duration-700 "

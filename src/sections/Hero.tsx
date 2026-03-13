@@ -108,6 +108,8 @@ const Hero = () => {
                 <picture>
                   <source srcSet={profilFotoAvif} type="image/avif" />
                   <img
+                    fetchPriority="high"
+                    loading="eager"
                     src={profilFotoPng}
                     alt="Alejandro Guzman"
                     className="w-full aspect-4/5 object-cover rounded-2xl"

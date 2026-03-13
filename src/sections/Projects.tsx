@@ -65,6 +65,7 @@ const Projects = () => {
                 <picture>
                   <source srcSet={project.imageAvif} type="image/avif" />
                 <img
+                  loading="lazy"
                   src={project.imagePng}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
