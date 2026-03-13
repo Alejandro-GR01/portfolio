@@ -6,7 +6,7 @@ import profilFotoPng from "/profile-photo.png";
 import profilFotoAvif from "/profile-photo.avif";
 import ButtonAnchor from "../components/ButtonAnchor";
 import AnimatedBorderAnchor from "../components/AnimatedBorderAnchor";
-import CV from "/cv.pdf";
+import CV from "/CV.pdf";
 
 const Hero = () => {
   return (
@@ -74,7 +74,7 @@ const Hero = () => {
 
               <AnimatedBorderAnchor
                 href={CV}
-                download="CV-Alejandro_Guzmán_Rodríguez.pdf"
+                download="Alejandro_Guzman_Frontend_Developer_CV.pdf"
               >
                 <LucideDownload className="w-5 h-5" />
                 Download CV
