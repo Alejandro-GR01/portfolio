@@ -1,12 +1,15 @@
 import { useRef } from "react";
 import TagLabel from "../components/TagLabel";
 import { experiences } from "../constants";
+import { useLanguage } from "../i18n";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 
 const Experience = () => {
+  const { language, t } = useLanguage();
   const expRef = useRef(null);
+  const mergedExperiences = experiences.map((exp, i) => ({ ...exp, ...t.experiences[i] }));
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +34,7 @@ const Experience = () => {
 
       ease: "power2.out",
     });
-  }, [{ scope: expRef }]);
+  }, { scope: expRef, dependencies: [language], revertOnUpdate: true });
   return (
     <section
       ref={expRef}
@@ -43,12 +46,12 @@ const Experience = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mb-16 ">
           <span className="text-secundary-foreground text-sm font-medium tracking-wide uppercase ">
-            Career Journey
+            {t.experienceData.badge}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6   text-secundary-foreground">
-            Experience that{" "}
+            {t.experienceData.h2_1}{" "}
             <span className="font-serif italic font-normal text-white">
-              speak volumes.
+              {t.experienceData.h2_span}
             </span>
           </h2>
 
@@ -61,7 +64,7 @@ const Experience = () => {
           <div className="absolute left-0 md:left-1/2 bottom-0 w-3 h-3 bg-radial  from-secundary to-secunday/50 rounded-full -translate-x-1/2 ring-4 ring-background/30 z-10  "></div>
 
           <div className="space-y-12">
-            {experiences.map((exp, index) => (
+            {mergedExperiences.map((exp, index) => (
               <div key={index} className="relative grid md:grid-cols-2 gap-8 ">
                 {/* timeline dot */}
                 <div className="testimony absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-radial from-primary to-primary/80 rounded-full -translate-x-1/2 ring-4 ring-background/50  z-10  ">

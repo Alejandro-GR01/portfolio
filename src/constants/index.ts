@@ -13,9 +13,7 @@ import type {
   Certification,
   ContactInfo,
   Experience,
-  FooterLink,
   HighlightAbout,
-  NavLink,
   Project,
   SocialLink,
   Testimonial,
@@ -34,35 +32,14 @@ import certif1Png from "/certifications/certif1.png";
 import certif2Png from "/certifications/certif2.png";
 import certif3Png from "/certifications/certif3.png";
 import certif4Png from "/certifications/certif4.png";
+import certif5Png from "/certifications/certif5.png";
 import certif1Avif from "/certifications/certif1.avif";
 import certif2Avif from "/certifications/certif2.avif";
 import certif3Avif from "/certifications/certif3.avif";
 import certif4Avif from "/certifications/certif4.avif";
+import certif5Avif from "/certifications/certif5.png";
 
 import profile01 from "/profile-photo1.jpg";
-
-export const navLinks: NavLink[] = [
-  {
-    href: "#about",
-    label: "About",
-  },
-  {
-    href: "#projects",
-    label: "Projects",
-  },
-  {
-    href: "#certifications",
-    label: "Certifications",
-  },
-  {
-    href: "#experience",
-    label: "Experience",
-  },
-  // {
-  //   href: "#testimonials",
-  //   label: "Testimonials",
-  // },
-];
 
 export const socialLinks: SocialLink[] = [
   {
@@ -94,39 +71,21 @@ export const skills: string[] = [
   "Zustand",
   "React Router",
   "React Hook Form",
+  "NodeJS",
+  "Express",
+  // "MongoDB",
+  // "Mongoose",
 ];
 
 export const highlightsAbout: HighlightAbout[] = [
-  {
-    icon: Code2,
-    title: "Clean Code",
-    description:
-      "Writing maintainable, scalable code that stands the test of time.",
-  },
-  {
-    icon: Rocket,
-    title: "Performance",
-    description:
-      "Optimizing for speed and delivering lightning-fast user-experiences.",
-  },
-  {
-    icon: Users,
-    title: "Collaboration",
-    description: "Working closely with teams to bring ideas to life.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    description:
-      "Staying ahead with the latest technologies and best practices.",
-  },
+  { icon: Code2 },
+  { icon: Rocket },
+  { icon: Users },
+  { icon: Lightbulb },
 ];
 
 export const projects: Project[] = [
   {
-    title: "Beats 3",
-    description:
-      "Responsive product landing page inspired by Beats headphones, focused on modern UI design, structured layouts, and clear product presentation.",
     imagePng: project01Png,
     imageAvif: project01Avif,
     tags: ["Vite", "React", "JavaScript", "ESLint", "Tailwind CSS", "GSAP"],
@@ -134,9 +93,6 @@ export const projects: Project[] = [
     github: "https://github.com/Alejandro-GR01/beats-3-landing",
   },
   {
-    title: "GPT-3",
-    description:
-      "Responsive landing page inspired by GPT-3 and AI platforms, focused on clean UI structure, organized content sections, and modern frontend design.",
     imagePng: project02Png,
     imageAvif: project02Avif,
     tags: ["Vite", "React", "JavaScript", "ESLint", "Tailwind CSS", "GSAP"],
@@ -144,9 +100,6 @@ export const projects: Project[] = [
     github: "https://github.com/Alejandro-GR01/gpt3-landing",
   },
   {
-    title: "MacBook Pro",
-    description:
-      "Interactive product landing page featuring 3D visualization and animations, built with React, Three.js, and GSAP, focused on modern UI, smooth transitions, and responsive design.",
     imagePng: project03Png,
     imageAvif: project03Avif,
     tags: [
@@ -163,9 +116,6 @@ export const projects: Project[] = [
     github: "https://github.com/Alejandro-GR01/macbook-react-gsap-threejs",
   },
   {
-    title: "HooBank",
-    description:
-      "Responsive fintech landing page focused on modern UI design, structured components, and clear presentation of digital financial services.",
     imagePng: project04Png,
     imageAvif: project04Avif,
     tags: ["Vite", "React", "JavaScript", "Tailwind CSS", "GSAP", "ESLint"],
@@ -176,16 +126,7 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
-    period: "2025-2026 (6 Months)",
-    role: "Frontend Developer",
     company: "UXP Programming",
-    description: [
-      "Development of responsive web layouts using Webflow.",
-      "Implementation of custom JavaScript solutions.",
-      "Complex interface and interaction problem solving.",
-      "Performance improvement and cross-browser compatibility.",
-      "Application of UX principles to improve usability.",
-    ],
     technologies: ["Webflow", "JavaScript", "HTML", "CSS"],
     current: true,
   },
@@ -193,9 +134,7 @@ export const experiences: Experience[] = [
 
 export const testimonials: Testimonial[] = [
   {
-    quote: "AAAAAAipsum dolor sit amet ",
     author: "Sara Chen",
-    role: "CTO, Tech Innovation Inc.",
     avatar: profile01,
   },
 ];
@@ -203,86 +142,55 @@ export const testimonials: Testimonial[] = [
 export const contactInfo: ContactInfo[] = [
   {
     icon: Mail,
-    label: "Email",
     value: "alejandrogr01dev@gmail.com",
     href: "mailto:alejandrogr01dev@gmail.com?subject=Laboral%20Oportunity%20Portfolio",
   },
   {
     icon: Phone,
-    label: "Phone",
     value: "+5356257921",
     href: "tel:+5356257921",
   },
   {
     icon: MapPin,
-    label: "Location",
     value: "La Palma, Pinar del Rio, Cuba",
     href: "https://maps.app.goo.gl/psMBGjKjvd6euCc8A",
   },
 ];
 
-export const footerLinks: FooterLink[] = [
-  {
-    href: "#about",
-    label: "About",
-  },
-  {
-    href: "#projects",
-    label: "Projects",
-  },
-  {
-    href: "#certifications",
-    label: "Certifications",
-  },
-  {
-    href: "#experience",
-    label: "Experience",
-  },
-  {
-    href: "#contact",
-    label: "Contact",
-  },
-];
-
 export const certifications: Certification[] = [
   {
-    name: "Beginner's TypeScript",
-    school: "TotalTypescript",
-    imagePng: certif1Png,
-    imageAvif: certif1Avif,
-    link: certif1Png,
-    period: "12/24 - 3/25",
-    description:
-      "Interactive tutorial teaching TypeScript fundamentals through practical exercises. Covers typing variables, functions, and errors while introducing modern tooling. Builds a solid foundation for confident use of TypeScript in real-world projects.",
+    school: "MoureDev | BigSchool",
+    imagePng: certif5Png,
+    imageAvif: certif5Avif,
+    link: certif5Png,
+    period: "3/26 - 3/26",
   },
   {
-    name: "Solving TypeScript Errors",
-    school: "TotalTypescript",
-    imagePng: certif2Png,
-    imageAvif: certif2Avif,
-    link: certif2Png,
-    period: "1/25 - 3/25",
-    description:
-      "Hands-on tutorial for identifying and fixing common TypeScript errors. Learn to interpret compiler messages and apply correct type solutions. Builds debugging skills and confidence in real-world TypeScript projects.",
-  },
-  {
-    name: "React Router",
-    school: "DevTalles",
-    imagePng: certif3Png,
-    imageAvif: certif3Avif,
-    link: certif3Png,
-    period: "8/2025 - 10/25",
-    description:
-      "Course focused on implementing client-side routing in React applications. Covers navigation, dynamic routes, route protection, and layout structuring with React Router. Strengthens skills for building scalable and well-structured React applications.",
-  },
-  {
-    name: "TanStack Query",
     school: "DevTalles",
     imagePng: certif4Png,
     imageAvif: certif4Avif,
     link: certif4Png,
     period: "10/25 - 11/25",
-    description:
-      "Focused on efficient data fetching and server-state management in React using TanStack Query. Covers caching strategies, mutations, background refetching, and API synchronization. Emphasizes building scalable and performant applications with modern data-handling patterns.",
+  },
+  {
+    school: "DevTalles",
+    imagePng: certif3Png,
+    imageAvif: certif3Avif,
+    link: certif3Png,
+    period: "8/2025 - 10/25",
+  },
+  {
+    school: "TotalTypescript",
+    imagePng: certif2Png,
+    imageAvif: certif2Avif,
+    link: certif2Png,
+    period: "1/25 - 3/25",
+  },
+  {
+    school: "TotalTypescript",
+    imagePng: certif1Png,
+    imageAvif: certif1Avif,
+    link: certif1Png,
+    period: "12/24 - 3/25",
   },
 ];
