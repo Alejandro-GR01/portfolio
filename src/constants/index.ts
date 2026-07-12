@@ -37,7 +37,7 @@ import certif1Avif from "/certifications/certif1.avif";
 import certif2Avif from "/certifications/certif2.avif";
 import certif3Avif from "/certifications/certif3.avif";
 import certif4Avif from "/certifications/certif4.avif";
-import certif5Avif from "/certifications/certif5.png";
+import certif5Avif from "/certifications/certif5.webp";
 
 import profile01 from "/profile-photo1.jpg";
 
