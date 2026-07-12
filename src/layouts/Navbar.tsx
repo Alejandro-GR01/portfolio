@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 
-import { navLinks } from "../constants";
+import { useLanguage } from "../i18n";
 import { useEffect, useState } from "react";
 import logoPng from "/portfolio-logo.png";
 import logoAvif from "/portfolio-logo.avif";
@@ -8,6 +8,7 @@ import logoAvif from "/portfolio-logo.avif";
 import ButtonAnchor from "../components/ButtonAnchor";
 
 const Navbar = () => {
+  const { t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,10 +46,10 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 ${isScrolled ? "glass-strong " : "bg-transparent"} border-none! transition-all duration-500 ease-out    z-20`}
+      className={`fixed top-0 left-0 right-0 ${isScrolled ? "glass-strong py-2" : "bg-transparent py-5"} border-none! transition-all duration-500 ease-out    z-20`}
     >
       <nav
-        className="relative z-20 container mx-auto py-5 px-6 flex items-center justify-between"
+        className="relative z-20 container mx-auto  px-6 flex items-center justify-between"
         onKeyDown={handleEsc}
       >
         <a
@@ -72,7 +73,7 @@ const Navbar = () => {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1 ">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1 ">
-            {navLinks.map((link, index) => (
+            {t.navLinks.map((link, index) => (
               <a
                 className="px-4 py-2 text-sm text-muted-foreground rounded-full transition-all duration-200 focus:outline-primary focus:outline-1 hover:text-foreground hover:bg-surface focus:text-foreground focus:bg-surface  "
                 key={index}
@@ -108,7 +109,7 @@ const Navbar = () => {
           className={`md:hidden absolute z-20 top-[98%] left-0 right-0  glass-strong rounded-b-2xl overflow-hidden  ${isMobileMenuOpen ? "animate-fade-in" : "fade-out"}`}
         >
           <div className="container  bg-surface/70 backdrop-blur-lg  mx-auto p-6 flex flex-col gap-4 items-center">
-            {navLinks.map((link, index) => (
+            {t.navLinks.map((link, index) => (
               <a
                 className="text-lg px-4 text-muted-foreground hover:text-foreground py-2 outline-primary focus:outline-2 rounded-xl"
                 key={index}

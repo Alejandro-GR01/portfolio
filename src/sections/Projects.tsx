@@ -1,59 +1,91 @@
 import { ArrowUpRightIcon, Github } from "lucide-react";
 import { projects } from "../constants";
+import { useLanguage } from "../i18n";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import TagLabel from "../components/TagLabel";
 // import AnimatedBorderAnchor from "../components/AnimatedBorderAnchor";
 
 const Projects = () => {
+  const { language, t } = useLanguage();
   const projectsRef = useRef(null);
+  const ctxRef = useRef<gsap.Context | null>(null);
+  const hasMounted = useRef(false);
+  const mergedProjects = projects.map((project, i) => ({ ...project, ...t.projects[i] }));
+
+  // Mount only — no dependencies
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from("#projects .container", {
-      scrollTrigger: {
-        trigger: "#projects",
-        start: "top 80%",
-      },
-      y: 200,
-      opacity: 0,
-      scale: 0.95,
-      duration: 1,
-      ease: "power2.out",
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from("#projects .container", {
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "top 80%",
+        },
+        y: 200,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1,
+        ease: "power2.out",
+      });
     });
-  }, [{ scope: projectsRef }]);
+  }, { scope: projectsRef });
+
+  // Language change — revert & recreate, skip initial mount
+  useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    if (!ctxRef.current) return;
+    ctxRef.current.revert();
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from("#projects .container", {
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "top 80%",
+        },
+        y: 200,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1,
+        ease: "power2.out",
+      });
+    });
+  }, [language]);
   return (
     <section
       ref={projectsRef}
       id="projects"
       className="py-12 md:py-32 relative overflow-hidden"
     >
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/6 left-0 w-120 h-120 bg-highlight/12 rounded-full blur-3xl" />
       <div className="absolute top-1/6 right-0 w-120 h-120 bg-primary/12 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/6 left-0 w-120 h-120 bg-highlight/12 rounded-full blur-3xl" />
+      <div className="absolute top-4/6 -right-1/9 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="text-secundary-foreground text-sm font-medium tracking-wider uppercase ">
-            Featured Work
+            {t.projectData.badge}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6  text-secundary-foreground">
-            Projects that
+            {t.projectData.h2_1}
             <span
               className="font-serif italic fornt-norm
              text-white"
             >
-              {""} make an impact
+              {""} {t.projectData.h2_span}
             </span>
           </h2>
           <p className="text-muted-foreground ">
-            A selection of my recent work, form complex web applications to
-            innovative tools that solve real-word problems
+            {t.projectData.desc}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {mergedProjects.map((project, index) => (
             <div
               key={index}
               className="group glass rounded-2xl overflow-hidden "
@@ -64,12 +96,12 @@ const Projects = () => {
               <div className="relative overflow-hidden aspect-video">
                 <picture>
                   <source srcSet={project.imageAvif} type="image/avif" />
-                <img
-                  loading="lazy"
-                  src={project.imagePng}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                  <img
+                    loading="lazy"
+                    src={project.imagePng}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                 </picture>
                 <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to bg-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-700 " />
 
@@ -108,10 +140,7 @@ const Projects = () => {
                 </p>
                 <div className="flex flex-wrap gap-2 ">
                   {project.tags.map((tag, tagIndex) => (
-                    <TagLabel key={tagIndex} >
-                         {tag}
-                    </TagLabel>
-                    
+                    <TagLabel key={tagIndex}>{tag}</TagLabel>
                   ))}
                 </div>
               </div>

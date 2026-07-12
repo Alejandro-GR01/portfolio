@@ -1,25 +1,58 @@
 import { useGSAP } from "@gsap/react";
 import { highlightsAbout } from "../constants";
-import { useRef } from "react";
+import { useLanguage } from "../i18n";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const About = () => {
+  const { language, t } = useLanguage();
+  const mergedHighlights = highlightsAbout.map((item, i) => ({ ...item, ...t.highlightsAbout[i] }));
   const aboutRef = useRef(null);
+  const ctxRef = useRef<gsap.Context | null>(null);
+  const hasMounted = useRef(false);
+
+  // Setup inicial — runs ONCE on mount
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from("#about .container", {
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top 80%",
-      },
-      y: 200,
-      opacity: 0,
-      scale: 0.95,
-      duration: 1,
-      ease: "power2.out",
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from("#about .container", {
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top 80%",
+        },
+        y: 200,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1,
+        ease: "power2.out",
+      });
     });
-  }, [{ scope: aboutRef }]);
+  }, { scope: aboutRef });
+
+  // Update on language change — skip initial mount via hasMounted guard
+  useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    if (!ctxRef.current) return;
+    ctxRef.current.revert();
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from("#about .container", {
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top 80%",
+        },
+        y: 200,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1,
+        ease: "power2.out",
+      });
+    });
+  }, [language]);
 
   return (
     <section
@@ -27,43 +60,47 @@ const About = () => {
       id="about"
       className="py-12 md:py-32 relative overflow-hidden"
     >
+      <div className="absolute top-1/9 right-1/6 w-90 h-90 bg-primary/8 rounded-full blur-3xl" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <div>
               <span className="text-secundary-foreground text-sm font-medium tracking-wide uppercase">
-                About Me
+                {t.aboutData.badge}
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight  text-secundary-foreground">
-              Building the future,
+              {t.aboutData.h2_1}
               <span className="text-white font-serif italic font-normal ">
                 {" "}
-                one component at a time.
+                {t.aboutData.h2_span}
               </span>
             </h2>
 
             <div className="space-y-4 text-muted-foreground ">
               <p>
-               I’m a Frontend Developer with a background in <span className="text-foreground/80">Electronics and Telecommunications Engineering</span>, passionate about web development and modern digital experiences.
+                {t.aboutData.p1_1}{" "}
+                <span className="text-foreground/80">
+                  {t.aboutData.p1_span}
+                </span>
+                {t.aboutData.p1_2}
               </p>
               <p>
-                I enjoy building responsive and interactive interfaces using technologies like React, TypeScript, JavaScript, and Tailwind CSS, with a strong focus on performance, usability, and clean code.
+                {t.aboutData.p2}
               </p>
               <p>
-               I’m also fascinated by the advances in artificial intelligence and enjoy exploring how these technologies can expand my knowledge and improve the way we build digital solutions.
+                {t.aboutData.p3}
               </p>
-             
             </div>
             <div className="glass rounded-2xl p-6 glow-border ">
               <p className="text-lg font-medium italic text-foreground">
-                My mission is to continuously grow as a developer, build high-quality web applications, and evolve toward becoming a Full Stack Developer.
+               {t.aboutData.mission}
               </p>
             </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6">
-            {highlightsAbout.map((item, index) => (
+            {mergedHighlights.map((item, index) => (
               <div
                 key={index}
                 className="glass group p-6 rounded-2xl group relative z-10 overflow-hidden"

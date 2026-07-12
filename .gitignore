@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Agent config
+.agents/
+.claude/
+.kiro/
+AGENTS.md
+skills-lock.json

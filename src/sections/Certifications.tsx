@@ -1,37 +1,78 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import { certifications } from "../constants";
-import { useRef } from "react";
+import { useLanguage } from "../i18n";
+import { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Certifications = () => {
+  const { language, t } = useLanguage();
   const certificationRef = useRef(null);
+  const ctxRef = useRef<gsap.Context | null>(null);
+  const hasMounted = useRef(false);
+  const mergedCertifications = certifications.map((cert, i) => ({ ...cert, ...t.certifications[i] }));
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#certifications",
-        start: "top 80%",
-      },
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#certifications",
+          start: "top 80%",
+        },
+      });
+
+      tl.from("#certifications .text-center.mx-auto ", {
+        opacity: 0,
+        duration: 0.9,
+
+        ease: "power2.out",
+      }).from("#certifications a.group.glass", {
+        opacity: 0,
+        y: 200,
+        scale: 0.6,
+        stagger: 0.2,
+        delay: -0.9,
+        duration: 0.9,
+
+        ease: "power2.out",
+      });
     });
+  }, { scope: certificationRef });
 
-    tl.from("#certifications .text-center.mx-auto ", {
-      opacity: 0,
-      duration: 0.9,
+  useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    if (!ctxRef.current) return;
+    ctxRef.current.revert();
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#certifications",
+          start: "top 80%",
+        },
+      });
 
-      ease: "power2.out",
-    }).from("#certifications a.group.glass", {
-      opacity: 0,
-      y: 200,
-      scale: 0.6,
-      stagger: 0.2,
-      delay: -0.9,
-      duration: 0.9,
+      tl.from("#certifications .text-center.mx-auto ", {
+        opacity: 0,
+        duration: 0.9,
 
-      ease: "power2.out",
+        ease: "power2.out",
+      }).from("#certifications a.group.glass", {
+        opacity: 0,
+        y: 200,
+        scale: 0.6,
+        stagger: 0.2,
+        delay: -0.9,
+        duration: 0.9,
+
+        ease: "power2.out",
+      });
     });
-  }, [{ scope: certificationRef }]);
+  }, [language]);
   return (
     <section
       ref={certificationRef}
@@ -48,33 +89,33 @@ const Certifications = () => {
       >
         <div className=" text-center mx-auto max-w-3xl mb-16">
           <span className="text-secundary-foreground text-sm font-medium tracking-wider uppercase ">
-            Certifications & Courses
+            {t.certificationData.badge}
           </span>
           <h2 className="text-4xl  md:text-5xl font-bold mt-4 mb-6  text-secundary-foreground">
-            Commitment to
+            {t.certificationData.h2_1}
             <span
               className="font-serif italic fornt-normal
              text-white"
             >
               {" "}
-              Continuous Learning
+              {t.certificationData.h2_span}
             </span>
           </h2>
         </div>
-        <div className="grid grid-cols-9   gap-5">
-          {certifications.map((certif, index) => (
+        <div className="grid mx-auto max-w-6xl grid-cols-9 gap-8   md:gap-12">
+          {mergedCertifications.map((certif, index) => (
             <a
               key={index}
               target="_blank"
               rel="noopener noreferrer"
               href={certif.link}
-              className={`group glass flex flex-col outline-primary focus:outline-2 items-between rounded-2xl overflow-hidden col-span-9 ${index % 4 === 0 || index % 3 == 0 ? " lg:col-span-5" : " lg:col-span-4"} ${index === certifications.length - 1 && certifications.length % 2 !== 0 && "lg:col-span-9 "}  `}
+              className={`group glass flex flex-col outline-primary focus:outline-2 items-between rounded-2xl overflow-hidden col-span-9 ${index % 4 === 0 || index % 3 == 0 ? " lg:col-span-5" : " lg:col-span-4"} ${index === mergedCertifications.length - 1 && mergedCertifications.length % 2 !== 0 && "lg:col-span-9 "}  `}
               style={{
                 animationDelay: `${(index + 1) * 100}ms`,
               }}
             >
               {/* Images */}
-              <div className={` relative overflow-hidden  h-[40svh] `}>
+              <div className={` relative overflow-hidden  h-[40svh] md:h-[45svh] `}>
                 <picture>
                   <source srcSet={certif.imageAvif} type="image/avif" />
                   <img

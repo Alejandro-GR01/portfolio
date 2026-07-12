@@ -1,14 +1,18 @@
 import { ChevronDown, LucideArrowRight, LucideDownload } from "lucide-react";
 import { skills, socialLinks } from "../constants";
+import { useLanguage } from "../i18n";
 
 import heroBg from "/hero-bg.jpg";
 import profilFotoPng from "/profile-photo.png";
 import profilFotoAvif from "/profile-photo.avif";
 import ButtonAnchor from "../components/ButtonAnchor";
 import AnimatedBorderAnchor from "../components/AnimatedBorderAnchor";
-import CV from "/CV.pdf";
 
 const Hero = () => {
+  const { language, t } = useLanguage();
+  const cvPath = language === "es" ? "/CV_es.pdf" : "/CV_en.pdf";
+  const cvDownloadName =
+    language === "es" ? "Alejandro_Guzman_CV_ES.pdf" : "Alejandro_Guzman_CV_EN.pdf";
   return (
     <section
       id="hero"
@@ -31,21 +35,21 @@ const Hero = () => {
             <div className="animate-fade-in_short ">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary-foreground">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Frontend Developer
+                {t.heroData.badge}
               </span>
             </div>
 
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in_short  animation-delay-100">
-                Turning{" "}
+                {t.heroData.h1_1}{" "}
                 <span className="text-primary glow-text animate-glow-shutDown">
-                  ideas
+                  {t.heroData.h1_span1}
                 </span>
                 <br />
-                into modern web{" "}
+                {t.heroData.h1_2}{" "}
                 <span className="text-primary glow-text  animate-glow-shutDown">
-                  experiences.
+                 {t.heroData.h1_span2}
                 </span>
                 <br />
                 {/* <span className="font-serif italic font-normal text-white">
@@ -53,12 +57,11 @@ const Hero = () => {
                 </span> */}
               </h1>
               <p className="text-lg text-muted-foreground max-w-xl animate-fade-in_short  animation-delay-200">
-                Hi, I'm{" "}
+                {t.heroData.intro_1}{" "}
                 <b className="text-foreground/80 font-medium">
-                  Alejandro Guzman
+                  {t.heroData.intro_bold1}
                 </b>
-                . I build scalable and high-performance web applications using
-                React and TypeScript.
+                {t.heroData.intro_2}
               </p>
             </div>
 
@@ -69,21 +72,21 @@ const Hero = () => {
                 className="flex gap-0 hover:gap-4 hover:pr-6 group-focus:gap-4 group-focus:pr-6"
                 href="#contact"
               >
-                Contact Me <LucideArrowRight className="w-5 h-5" />
+                {t.buttonText.contact}<LucideArrowRight className="w-5 h-5" />
               </ButtonAnchor>
 
               <AnimatedBorderAnchor
-                href={CV}
-                download="Alejandro_Guzman_Frontend_Developer_CV.pdf"
+                href={cvPath}
+                download={cvDownloadName}
               >
                 <LucideDownload className="w-5 h-5" />
-                Download CV
+                {t.buttonText.downloadCv}
               </AnimatedBorderAnchor>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-4 animate-fade-in_short animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow me: </span>
+              <span className="text-sm text-muted-foreground">{t.heroData.follow_title}</span>
               {socialLinks.map((social, index) => (
                 <a
                   href={social.href}
@@ -120,17 +123,17 @@ const Hero = () => {
 
                   <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float ">
                     <div className="text-2xl font-bold text-primary glow-text ">
-                      5+
+                     {t.heroData.exp_time}
                     </div>
                     <div className="text-xs text-muted-foreground">
-                      Months Exp.
+                     {t.heroData.exp_span}
                     </div>
                   </div>
                   <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
                     <div className="flex items-center gap-3">
                       <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse " />
                       <span className="text-sm font-medium">
-                        Available for work
+                        {t.heroData.exp_available}
                       </span>
                     </div>
                   </div>
@@ -142,7 +145,7 @@ const Hero = () => {
 
         <div className=" mt-20 animate-fade-in_short animation-delay-800 ">
           <p className="text-lg font-extralight text-muted-foreground/80 mb-6 text-center">
-            Technologies I work with
+            {t.heroData.tech_title}
           </p>
           <div className=" ml-[50%] relative overflow-hidden w-svw -translate-x-1/2  pt-4 ">
             <div
