@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import { certifications } from "../constants";
 import { useLanguage } from "../i18n";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,32 +9,70 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const Certifications = () => {
   const { language, t } = useLanguage();
   const certificationRef = useRef(null);
+  const ctxRef = useRef<gsap.Context | null>(null);
+  const hasMounted = useRef(false);
   const mergedCertifications = certifications.map((cert, i) => ({ ...cert, ...t.certifications[i] }));
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#certifications",
-        start: "top 80%",
-      },
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#certifications",
+          start: "top 80%",
+        },
+      });
+
+      tl.from("#certifications .text-center.mx-auto ", {
+        opacity: 0,
+        duration: 0.9,
+
+        ease: "power2.out",
+      }).from("#certifications a.group.glass", {
+        opacity: 0,
+        y: 200,
+        scale: 0.6,
+        stagger: 0.2,
+        delay: -0.9,
+        duration: 0.9,
+
+        ease: "power2.out",
+      });
     });
+  }, { scope: certificationRef });
 
-    tl.from("#certifications .text-center.mx-auto ", {
-      opacity: 0,
-      duration: 0.9,
+  useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    if (!ctxRef.current) return;
+    ctxRef.current.revert();
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#certifications",
+          start: "top 80%",
+        },
+      });
 
-      ease: "power2.out",
-    }).from("#certifications a.group.glass", {
-      opacity: 0,
-      y: 200,
-      scale: 0.6,
-      stagger: 0.2,
-      delay: -0.9,
-      duration: 0.9,
+      tl.from("#certifications .text-center.mx-auto ", {
+        opacity: 0,
+        duration: 0.9,
 
-      ease: "power2.out",
+        ease: "power2.out",
+      }).from("#certifications a.group.glass", {
+        opacity: 0,
+        y: 200,
+        scale: 0.6,
+        stagger: 0.2,
+        delay: -0.9,
+        duration: 0.9,
+
+        ease: "power2.out",
+      });
     });
-  }, { scope: certificationRef, dependencies: [language], revertOnUpdate: true });
+  }, [language]);
   return (
     <section
       ref={certificationRef}

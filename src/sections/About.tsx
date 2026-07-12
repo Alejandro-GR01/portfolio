@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import { highlightsAbout } from "../constants";
 import { useLanguage } from "../i18n";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,20 +9,50 @@ const About = () => {
   const { language, t } = useLanguage();
   const mergedHighlights = highlightsAbout.map((item, i) => ({ ...item, ...t.highlightsAbout[i] }));
   const aboutRef = useRef(null);
+  const ctxRef = useRef<gsap.Context | null>(null);
+  const hasMounted = useRef(false);
+
+  // Setup inicial — runs ONCE on mount
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from("#about .container", {
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top 80%",
-      },
-      y: 200,
-      opacity: 0,
-      scale: 0.95,
-      duration: 1,
-      ease: "power2.out",
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from("#about .container", {
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top 80%",
+        },
+        y: 200,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1,
+        ease: "power2.out",
+      });
     });
-  }, { scope: aboutRef, dependencies: [language], revertOnUpdate: true });
+  }, { scope: aboutRef });
+
+  // Update on language change — skip initial mount via hasMounted guard
+  useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    if (!ctxRef.current) return;
+    ctxRef.current.revert();
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from("#about .container", {
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top 80%",
+        },
+        y: 200,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1,
+        ease: "power2.out",
+      });
+    });
+  }, [language]);
 
   return (
     <section

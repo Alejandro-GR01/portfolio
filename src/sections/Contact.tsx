@@ -64,7 +64,7 @@ const Contact = () => {
         publicKey,
       );
 
-      toast.success("Message sent successfully. I'll get back to you soon.", {
+      toast.success(t.contactData.toast_success, {
         style: {
           color: "#10b981",
           background: "color-mix(in srgb, #1a2329 90%, transparent)",
@@ -83,7 +83,7 @@ const Contact = () => {
      
 
       toast.error(
-        `${message || "Failed to send message. Please try again."}`,
+        `${message || t.contactData.toast_error}`,
         {
           style: {
             color: "#ef4444",
@@ -146,7 +146,7 @@ const Contact = () => {
                   placeholder={t.contactData.form_name__placeholder}
                   className={`w-full px-4 py-3 bg-surface rounded-xl border border-border ${errors.name && "border-primary outline outline-primary"} focus:border-primary focus:outline-1   outline-primary transition-all ease-in `}
                   {...register("name", {
-                    required: "The name is required",
+                    required: t.contactData.form_name__required,
                   })}
                 />
                 <ErrorMessage>{errors.name?.message}</ErrorMessage>
@@ -161,7 +161,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  placeholder="your.email@example.com"
+                  placeholder={t.contactData.form_email_placeholder}
                   className={`w-full px-4 py-3 bg-surface rounded-xl border border-border ${errors.email && "border-primary outline outline-primary"} focus:border-primary focus:outline-1   outline-primary transition-all ease-in `}
                   {...register("email", {
                     required: t.contactData.form_email__required,
@@ -184,7 +184,7 @@ const Contact = () => {
                 <textarea
                   rows={5}
                   id="message"
-                  placeholder="Hello, I'm interested in..."
+                  placeholder={t.contactData.from_message}
                   className={`m-0! w-full px-4 py-3 bg-surface rounded-xl border border-border  ${errors.email && "border-primary outline outline-primary"} focus:border-primary focus:outline-1   outline-primary transition-all ease-in resize-none `}
                   {...register("message", {
                     required: t.contactData.form_message__required,

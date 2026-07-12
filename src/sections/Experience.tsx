@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import TagLabel from "../components/TagLabel";
 import { experiences } from "../constants";
 import { useLanguage } from "../i18n";
@@ -9,32 +9,71 @@ import gsap from "gsap";
 const Experience = () => {
   const { language, t } = useLanguage();
   const expRef = useRef(null);
+  const ctxRef = useRef<gsap.Context | null>(null);
+  const hasMounted = useRef(false);
   const mergedExperiences = experiences.map((exp, i) => ({ ...exp, ...t.experiences[i] }));
 
+  // Mount only — no dependencies
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#experience",
-        start: "top 80%",
-      },
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#experience",
+          start: "top 80%",
+        },
+      });
+
+      tl.from("#experience .container .max-w-3xl ", {
+        opacity: 0,
+        y: 300,
+        duration: 1,
+
+        ease: "power2.out",
+      }).from(".experience-container ", {
+        opacity: 0,
+        y: 200,
+        delay: -0.5,
+        duration: 0.9,
+
+        ease: "power2.out",
+      });
     });
+  }, { scope: expRef });
 
-    tl.from("#experience .container .max-w-3xl ", {
-      opacity: 0,
-      y: 300,
-      duration: 1,
+  // Language change — skip initial mount via hasMounted guard
+  useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    if (!ctxRef.current) return;
+    ctxRef.current.revert();
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#experience",
+          start: "top 80%",
+        },
+      });
 
-      ease: "power2.out",
-    }).from(".experience-container ", {
-      opacity: 0,
-      y: 200,
-      delay: -0.5,
-      duration: 0.9,
+      tl.from("#experience .container .max-w-3xl ", {
+        opacity: 0,
+        y: 300,
+        duration: 1,
 
-      ease: "power2.out",
+        ease: "power2.out",
+      }).from(".experience-container ", {
+        opacity: 0,
+        y: 200,
+        delay: -0.5,
+        duration: 0.9,
+
+        ease: "power2.out",
+      });
     });
-  }, { scope: expRef, dependencies: [language], revertOnUpdate: true });
+  }, [language]);
   return (
     <section
       ref={expRef}

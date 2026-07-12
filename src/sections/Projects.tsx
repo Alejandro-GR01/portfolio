@@ -4,28 +4,58 @@ import { useLanguage } from "../i18n";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import TagLabel from "../components/TagLabel";
 // import AnimatedBorderAnchor from "../components/AnimatedBorderAnchor";
 
 const Projects = () => {
   const { language, t } = useLanguage();
   const projectsRef = useRef(null);
+  const ctxRef = useRef<gsap.Context | null>(null);
+  const hasMounted = useRef(false);
   const mergedProjects = projects.map((project, i) => ({ ...project, ...t.projects[i] }));
+
+  // Mount only — no dependencies
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from("#projects .container", {
-      scrollTrigger: {
-        trigger: "#projects",
-        start: "top 80%",
-      },
-      y: 200,
-      opacity: 0,
-      scale: 0.95,
-      duration: 1,
-      ease: "power2.out",
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from("#projects .container", {
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "top 80%",
+        },
+        y: 200,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1,
+        ease: "power2.out",
+      });
     });
-  }, { scope: projectsRef, dependencies: [language], revertOnUpdate: true });
+  }, { scope: projectsRef });
+
+  // Language change — revert & recreate, skip initial mount
+  useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    if (!ctxRef.current) return;
+    ctxRef.current.revert();
+    ctxRef.current = gsap.context(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from("#projects .container", {
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "top 80%",
+        },
+        y: 200,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1,
+        ease: "power2.out",
+      });
+    });
+  }, [language]);
   return (
     <section
       ref={projectsRef}

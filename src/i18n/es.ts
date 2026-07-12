@@ -77,6 +77,8 @@ export const contactData = {
   from_message: "Hola, estoy interesado en...",
   contact_title: "Información de Contacto",
   form_message__required: "¡El mensaje es obligatorio!",
+  toast_success: "Mensaje enviado correctamente. Te responderé pronto.",
+  toast_error: "Error al enviar el mensaje. Por favor, intenta de nuevo.",
   available_title: "Actualmente Disponible",
   available_desc:
     "Estoy abierto a nuevas oportunidades y proyectos emocionantes. ¡Cuéntame qué necesitas, hablemos!",
