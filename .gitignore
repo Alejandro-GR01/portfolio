@@ -29,6 +29,3 @@ dist-ssr
 .kiro/
 AGENTS.md
 skills-lock.json
-
-# Playwright MCP artifacts
-.playwright-mcp/
