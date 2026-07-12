@@ -92,7 +92,7 @@ const Navbar = () => {
           className="hidden h-fit w-fit md:block rounded-4xl group outline-0"
           href="#contact"
         >
-          Contact Me
+          {t.buttonText.contact}
         </ButtonAnchor>
 
         {/* Mobile Menu Button */}
@@ -125,7 +125,7 @@ const Navbar = () => {
               className="w-full sm:w-fit mx-auto flex flex-col sm:justify-center group outline-0"
               href="#contact"
             >
-              Contact Me
+              {t.buttonText.contact}
             </ButtonAnchor>
           </div>
         </div>

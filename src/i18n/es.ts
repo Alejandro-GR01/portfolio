@@ -172,12 +172,12 @@ export const certifications = [
       "Curso enfocado en implementar enrutamiento del lado del cliente en aplicaciones React. Cubre navegación, rutas dinámicas, protección de rutas y estructuración de layouts con React Router. Fortalece habilidades para construir aplicaciones React escalables y bien estructuradas.",
   },
   {
-    name: "Solving TypeScript Errors",
+    name: "Resolución de Errores de TypeScript",
     description:
       "Tutorial práctico para identificar y corregir errores comunes de TypeScript. Aprende a interpretar mensajes del compilador y aplicar soluciones de tipos correctas. Desarrolla habilidades de depuración y confianza en proyectos reales de TypeScript.",
   },
   {
-    name: "Beginner's TypeScript",
+    name: "TypeScript para Principiantes",
     description:
       "Tutorial interactivo que enseña los fundamentos de TypeScript a través de ejercicios prácticos. Cubre el tipado de variables, funciones y errores mientras introduce herramientas modernas. Construye una base sólida para el uso confiable de TypeScript en proyectos reales.",
   },

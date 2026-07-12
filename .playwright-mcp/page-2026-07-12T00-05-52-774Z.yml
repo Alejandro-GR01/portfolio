@@ -1,0 +1,414 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - navigation [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: "#"
+          - img "<AGR/>" [ref=e8]
+        - button "toogle-menu" [ref=e9] [cursor=pointer]:
+          - img [ref=e10]
+    - button "ES EN" [ref=e11] [cursor=pointer]:
+      - generic [ref=e12]: ES
+      - generic [ref=e13]: EN
+    - main [ref=e14]:
+      - generic [ref=e15]:
+        - img "Hero image" [ref=e17]
+        - generic [ref=e19]:
+          - generic [ref=e20]:
+            - generic [ref=e21]:
+              - generic [ref=e23]: Desarrollador Frontend
+              - generic [ref=e25]:
+                - heading "Convirtiendo ideas en web modernas experiencias." [level=1] [ref=e26]:
+                  - text: Convirtiendo ideas
+                  - text: en web modernas experiencias.
+                - paragraph [ref=e27]: Hola, soy Alejandro Guzmán. Construyo aplicaciones web escalables y de alto rendimiento usando React y TypeScript.
+              - generic [ref=e28]:
+                - link "Contáctame" [ref=e29] [cursor=pointer]:
+                  - /url: "#contact"
+                  - text: Contáctame
+                  - img [ref=e30]
+                - link "Descargar CV" [ref=e32] [cursor=pointer]:
+                  - /url: /CV_es.pdf
+                  - generic [ref=e33]:
+                    - img [ref=e34]
+                    - text: Descargar CV
+              - generic [ref=e37]:
+                - generic [ref=e38]: "Sígueme:"
+                - link "Github-https://github.com/Alejandro-GR01" [ref=e39] [cursor=pointer]:
+                  - /url: https://github.com/Alejandro-GR01
+                  - img [ref=e40]
+                - link "Linkedin-https://www.linkedin.com/in/alejandro-guzm%C3%A1n-rodr%C3%ADguez-3985b23b3" [ref=e43] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/alejandro-guzm%C3%A1n-rodr%C3%ADguez-3985b23b3
+                  - img [ref=e44]
+            - generic [ref=e51]:
+              - img "Alejandro Guzman" [ref=e53]
+              - generic [ref=e54]:
+                - generic [ref=e55]:
+                  - generic [ref=e56]: 5+
+                  - generic [ref=e57]: Meses de Exp.
+                - generic [ref=e61]: Disponible para trabajar
+          - generic [ref=e62]:
+            - paragraph [ref=e63]: Tecnologías con las que trabajo
+            - generic [ref=e65]:
+              - generic [ref=e66]: HTML5
+              - generic [ref=e67]: CSS
+              - generic [ref=e68]: Sass
+              - generic [ref=e69]: Gulp
+              - generic [ref=e70]: JavaScript
+              - generic [ref=e71]: PNPM
+              - generic [ref=e72]: Tailwind CSS
+              - generic [ref=e73]: React
+              - generic [ref=e74]: TypeScript
+              - generic [ref=e75]: Git
+              - generic [ref=e76]: GitHub
+              - generic [ref=e77]: TanStack Query
+              - generic [ref=e78]: Zod
+              - generic [ref=e79]: Zustand
+              - generic [ref=e80]: React Router
+              - generic [ref=e81]: React Hook Form
+              - generic [ref=e82]: NodeJS
+              - generic [ref=e83]: Express
+              - generic [ref=e84]: HTML5
+              - generic [ref=e85]: CSS
+              - generic [ref=e86]: Sass
+              - generic [ref=e87]: Gulp
+              - generic [ref=e88]: JavaScript
+              - generic [ref=e89]: PNPM
+              - generic [ref=e90]: Tailwind CSS
+              - generic [ref=e91]: React
+              - generic [ref=e92]: TypeScript
+              - generic [ref=e93]: Git
+              - generic [ref=e94]: GitHub
+              - generic [ref=e95]: TanStack Query
+              - generic [ref=e96]: Zod
+              - generic [ref=e97]: Zustand
+              - generic [ref=e98]: React Router
+              - generic [ref=e99]: React Hook Form
+              - generic [ref=e100]: NodeJS
+              - generic [ref=e101]: Express
+              - generic [ref=e102]: HTML5
+              - generic [ref=e103]: CSS
+              - generic [ref=e104]: Sass
+              - generic [ref=e105]: Gulp
+              - generic [ref=e106]: JavaScript
+              - generic [ref=e107]: PNPM
+              - generic [ref=e108]: Tailwind CSS
+              - generic [ref=e109]: React
+              - generic [ref=e110]: TypeScript
+              - generic [ref=e111]: Git
+              - generic [ref=e112]: GitHub
+              - generic [ref=e113]: TanStack Query
+              - generic [ref=e114]: Zod
+              - generic [ref=e115]: Zustand
+              - generic [ref=e116]: React Router
+              - generic [ref=e117]: React Hook Form
+              - generic [ref=e118]: NodeJS
+              - generic [ref=e119]: Express
+              - generic [ref=e120]: HTML5
+              - generic [ref=e121]: CSS
+              - generic [ref=e122]: Sass
+              - generic [ref=e123]: Gulp
+              - generic [ref=e124]: JavaScript
+              - generic [ref=e125]: PNPM
+              - generic [ref=e126]: Tailwind CSS
+              - generic [ref=e127]: React
+              - generic [ref=e128]: TypeScript
+              - generic [ref=e129]: Git
+              - generic [ref=e130]: GitHub
+              - generic [ref=e131]: TanStack Query
+              - generic [ref=e132]: Zod
+              - generic [ref=e133]: Zustand
+              - generic [ref=e134]: React Router
+              - generic [ref=e135]: React Hook Form
+              - generic [ref=e136]: NodeJS
+              - generic [ref=e137]: Express
+        - link "Scroll" [ref=e141] [cursor=pointer]:
+          - /url: "#about"
+          - paragraph [ref=e142]: Scroll
+          - img [ref=e143]
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - generic [ref=e150]: Sobre mí
+          - heading "Construyendo el futuro, un componente a la vez." [level=2] [ref=e151]:
+            - text: Construyendo el futuro,
+            - generic [ref=e152]: un componente a la vez.
+          - generic [ref=e153]:
+            - paragraph [ref=e154]: Soy un Desarrollador Frontend con formación en Ingeniería en Electrónica y Telecomunicaciones, apasionado por el desarrollo web y las experiencias digitales modernas.
+            - paragraph [ref=e155]: Disfruto construyendo interfaces responsivas e interactivas usando tecnologías como React, TypeScript, JavaScript y Tailwind CSS, con un fuerte enfoque en rendimiento, usabilidad y código limpio.
+            - paragraph [ref=e156]: También me fascinan los avances en inteligencia artificial y disfruto explorar cómo estas tecnologías pueden ampliar mis conocimientos y mejorar la forma en que construimos soluciones digitales.
+          - paragraph [ref=e158]: Mi misión es crecer continuamente como desarrollador, crear aplicaciones web de alta calidad y evolucionar hacia convertirme en un Desarrollador Full Stack.
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - img [ref=e163]
+            - heading "Código Limpio" [level=3] [ref=e167]
+            - paragraph [ref=e168]: Escribir código mantenible y escalable que resista el paso del tiempo.
+          - generic [ref=e169]:
+            - img [ref=e172]
+            - heading "Rendimiento" [level=3] [ref=e177]
+            - paragraph [ref=e178]: Optimizar la velocidad y entregar experiencias de usuario ultrarrápidas.
+          - generic [ref=e179]:
+            - img [ref=e182]
+            - heading "Colaboración" [level=3] [ref=e187]
+            - paragraph [ref=e188]: Trabajar de cerca con los equipos para hacer realidad las ideas.
+          - generic [ref=e189]:
+            - img [ref=e192]
+            - heading "Innovación" [level=3] [ref=e194]
+            - paragraph [ref=e195]: Mantenerse a la vanguardia con las últimas tecnologías y mejores prácticas.
+      - generic [ref=e200]:
+        - generic [ref=e201]:
+          - text: Trabajo Destacado
+          - heading "Proyectos que generan impacto" [level=2] [ref=e202]:
+            - text: Proyectos que
+            - generic [ref=e203]: generan impacto
+          - paragraph [ref=e204]: Una selección de mi trabajo reciente, desde aplicaciones web complejas hasta herramientas innovadoras que resuelven problemas reales.
+        - generic [ref=e205]:
+          - generic [ref=e206]:
+            - generic [ref=e207]:
+              - img "Beats 3" [ref=e209]
+              - link "go to project-lik https://alejandro-gr01.github.io/beats-3-landing/" [ref=e211] [cursor=pointer]:
+                - /url: https://alejandro-gr01.github.io/beats-3-landing/
+                - img [ref=e212]
+              - link "go to github-lik https://github.com/Alejandro-GR01/beats-3-landing" [ref=e215] [cursor=pointer]:
+                - /url: https://github.com/Alejandro-GR01/beats-3-landing
+                - img [ref=e216]
+            - generic [ref=e219]:
+              - generic [ref=e220]:
+                - heading "Beats 3" [level=3] [ref=e221]
+                - img [ref=e222]
+              - paragraph [ref=e225]: Landing page responsiva de producto inspirada en Beats, enfocada en diseño UI moderno, layouts estructurados y presentación clara del producto.
+              - generic [ref=e226]:
+                - generic [ref=e227]: Vite
+                - generic [ref=e228]: React
+                - generic [ref=e229]: JavaScript
+                - generic [ref=e230]: ESLint
+                - generic [ref=e231]: Tailwind CSS
+                - generic [ref=e232]: GSAP
+          - generic [ref=e233]:
+            - generic [ref=e234]:
+              - img "GPT-3" [ref=e236]
+              - link "go to project-lik https://alejandro-gr01.github.io/gpt3-landing/" [ref=e238] [cursor=pointer]:
+                - /url: https://alejandro-gr01.github.io/gpt3-landing/
+                - img [ref=e239]
+              - link "go to github-lik https://github.com/Alejandro-GR01/gpt3-landing" [ref=e242] [cursor=pointer]:
+                - /url: https://github.com/Alejandro-GR01/gpt3-landing
+                - img [ref=e243]
+            - generic [ref=e246]:
+              - generic [ref=e247]:
+                - heading "GPT-3" [level=3] [ref=e248]
+                - img [ref=e249]
+              - paragraph [ref=e252]: Landing page responsiva inspirada en GPT-3 y plataformas de IA, enfocada en estructura UI limpia, secciones de contenido organizadas y diseño frontend moderno.
+              - generic [ref=e253]:
+                - generic [ref=e254]: Vite
+                - generic [ref=e255]: React
+                - generic [ref=e256]: JavaScript
+                - generic [ref=e257]: ESLint
+                - generic [ref=e258]: Tailwind CSS
+                - generic [ref=e259]: GSAP
+          - generic [ref=e260]:
+            - generic [ref=e261]:
+              - img "MacBook Pro" [ref=e263]
+              - link "go to project-lik https://alejandro-gr01.github.io/macbook-react-gsap-threejs/" [ref=e265] [cursor=pointer]:
+                - /url: https://alejandro-gr01.github.io/macbook-react-gsap-threejs/
+                - img [ref=e266]
+              - link "go to github-lik https://github.com/Alejandro-GR01/macbook-react-gsap-threejs" [ref=e269] [cursor=pointer]:
+                - /url: https://github.com/Alejandro-GR01/macbook-react-gsap-threejs
+                - img [ref=e270]
+            - generic [ref=e273]:
+              - generic [ref=e274]:
+                - heading "MacBook Pro" [level=3] [ref=e275]
+                - img [ref=e276]
+              - paragraph [ref=e279]: Landing page interactiva de producto con visualización 3D y animaciones, construida con React, Three.js y GSAP, enfocada en UI moderna, transiciones suaves y diseño responsivo.
+              - generic [ref=e280]:
+                - generic [ref=e281]: Vite
+                - generic [ref=e282]: React
+                - generic [ref=e283]: JavaScript
+                - generic [ref=e284]: ESLint
+                - generic [ref=e285]: Tailwind CSS
+                - generic [ref=e286]: GSAP
+                - generic [ref=e287]: Three JS
+                - generic [ref=e288]: Zustand
+          - generic [ref=e289]:
+            - generic [ref=e290]:
+              - img "HooBank" [ref=e292]
+              - link "go to project-lik https://alejandro-gr01.github.io/hoobank-landing/" [ref=e294] [cursor=pointer]:
+                - /url: https://alejandro-gr01.github.io/hoobank-landing/
+                - img [ref=e295]
+              - link "go to github-lik https://github.com/Alejandro-GR01/hoobank-landing" [ref=e298] [cursor=pointer]:
+                - /url: https://github.com/Alejandro-GR01/hoobank-landing
+                - img [ref=e299]
+            - generic [ref=e302]:
+              - generic [ref=e303]:
+                - heading "HooBank" [level=3] [ref=e304]
+                - img [ref=e305]
+              - paragraph [ref=e308]: Landing page fintech responsiva enfocada en diseño UI moderno, componentes estructurados y presentación clara de servicios financieros digitales.
+              - generic [ref=e309]:
+                - generic [ref=e310]: Vite
+                - generic [ref=e311]: React
+                - generic [ref=e312]: JavaScript
+                - generic [ref=e313]: Tailwind CSS
+                - generic [ref=e314]: GSAP
+                - generic [ref=e315]: ESLint
+      - generic [ref=e320]:
+        - generic [ref=e321]:
+          - text: Certificaciones & Cursos
+          - heading "Compromiso con el Aprendizaje Continuo" [level=2] [ref=e322]:
+            - text: Compromiso con el
+            - generic [ref=e323]: Aprendizaje Continuo
+        - generic [ref=e324]:
+          - link "Iniciación al desarrollo con IA Iniciación al desarrollo con IA MoureDev | BigSchool 3/26 - 3/26 Curso enfocado en el desarrollo real con tecnologías de IA y mejores prácticas en Ingeniería de Software con Agentes de IA en el momento actual." [ref=e325] [cursor=pointer]:
+            - /url: /portfolio/certifications/certif5.png
+            - img "Iniciación al desarrollo con IA" [ref=e328]
+            - generic [ref=e331]:
+              - generic [ref=e332]:
+                - generic [ref=e333]:
+                  - heading "Iniciación al desarrollo con IA" [level=3] [ref=e334]
+                  - generic [ref=e335]:
+                    - generic [ref=e336]: MoureDev | BigSchool
+                    - generic [ref=e337]: 3/26 - 3/26
+                - img [ref=e338]
+              - paragraph [ref=e341]: Curso enfocado en el desarrollo real con tecnologías de IA y mejores prácticas en Ingeniería de Software con Agentes de IA en el momento actual.
+          - link "TanStack Query TanStack Query DevTalles 10/25 - 11/25 Enfocado en la obtención eficiente de datos y gestión del estado del servidor en React usando TanStack Query. Cubre estrategias de caché, mutaciones, refetching en segundo plano y sincronización de API. Enfocado en construir aplicaciones escalables y performantes con patrones modernos de manejo de datos." [ref=e342] [cursor=pointer]:
+            - /url: /portfolio/certifications/certif4.png
+            - img "TanStack Query" [ref=e345]
+            - generic [ref=e348]:
+              - generic [ref=e349]:
+                - generic [ref=e350]:
+                  - heading "TanStack Query" [level=3] [ref=e351]
+                  - generic [ref=e352]:
+                    - generic [ref=e353]: DevTalles
+                    - generic [ref=e354]: 10/25 - 11/25
+                - img [ref=e355]
+              - paragraph [ref=e358]: Enfocado en la obtención eficiente de datos y gestión del estado del servidor en React usando TanStack Query. Cubre estrategias de caché, mutaciones, refetching en segundo plano y sincronización de API. Enfocado en construir aplicaciones escalables y performantes con patrones modernos de manejo de datos.
+          - link "React Router React Router DevTalles 8/2025 - 10/25 Curso enfocado en implementar enrutamiento del lado del cliente en aplicaciones React. Cubre navegación, rutas dinámicas, protección de rutas y estructuración de layouts con React Router. Fortalece habilidades para construir aplicaciones React escalables y bien estructuradas." [ref=e359] [cursor=pointer]:
+            - /url: /portfolio/certifications/certif3.png
+            - img "React Router" [ref=e362]
+            - generic [ref=e365]:
+              - generic [ref=e366]:
+                - generic [ref=e367]:
+                  - heading "React Router" [level=3] [ref=e368]
+                  - generic [ref=e369]:
+                    - generic [ref=e370]: DevTalles
+                    - generic [ref=e371]: 8/2025 - 10/25
+                - img [ref=e372]
+              - paragraph [ref=e375]: Curso enfocado en implementar enrutamiento del lado del cliente en aplicaciones React. Cubre navegación, rutas dinámicas, protección de rutas y estructuración de layouts con React Router. Fortalece habilidades para construir aplicaciones React escalables y bien estructuradas.
+          - link "Solving TypeScript Errors Solving TypeScript Errors TotalTypescript 1/25 - 3/25 Tutorial práctico para identificar y corregir errores comunes de TypeScript. Aprende a interpretar mensajes del compilador y aplicar soluciones de tipos correctas. Desarrolla habilidades de depuración y confianza en proyectos reales de TypeScript." [ref=e376] [cursor=pointer]:
+            - /url: /portfolio/certifications/certif2.png
+            - img "Solving TypeScript Errors" [ref=e379]
+            - generic [ref=e382]:
+              - generic [ref=e383]:
+                - generic [ref=e384]:
+                  - heading "Solving TypeScript Errors" [level=3] [ref=e385]
+                  - generic [ref=e386]:
+                    - generic [ref=e387]: TotalTypescript
+                    - generic [ref=e388]: 1/25 - 3/25
+                - img [ref=e389]
+              - paragraph [ref=e392]: Tutorial práctico para identificar y corregir errores comunes de TypeScript. Aprende a interpretar mensajes del compilador y aplicar soluciones de tipos correctas. Desarrolla habilidades de depuración y confianza en proyectos reales de TypeScript.
+          - link "Beginner's TypeScript Beginner's TypeScript TotalTypescript 12/24 - 3/25 Tutorial interactivo que enseña los fundamentos de TypeScript a través de ejercicios prácticos. Cubre el tipado de variables, funciones y errores mientras introduce herramientas modernas. Construye una base sólida para el uso confiable de TypeScript en proyectos reales." [ref=e393] [cursor=pointer]:
+            - /url: /portfolio/certifications/certif1.png
+            - img "Beginner's TypeScript" [ref=e396]
+            - generic [ref=e399]:
+              - generic [ref=e400]:
+                - generic [ref=e401]:
+                  - heading "Beginner's TypeScript" [level=3] [ref=e402]
+                  - generic [ref=e403]:
+                    - generic [ref=e404]: TotalTypescript
+                    - generic [ref=e405]: 12/24 - 3/25
+                - img [ref=e406]
+              - paragraph [ref=e409]: Tutorial interactivo que enseña los fundamentos de TypeScript a través de ejercicios prácticos. Cubre el tipado de variables, funciones y errores mientras introduce herramientas modernas. Construye una base sólida para el uso confiable de TypeScript en proyectos reales.
+      - generic [ref=e412]:
+        - generic [ref=e413]:
+          - text: Trayectoria Profesional
+          - heading "Experiencia que habla por sí sola." [level=2] [ref=e414]
+        - generic [ref=e423]:
+          - text: 2025-2026 (6 Meses)
+          - heading "Desarrollador Frontend" [level=3] [ref=e424]
+          - paragraph [ref=e425]: UXP Programming
+          - list [ref=e426]:
+            - listitem [ref=e427]: Desarrollo de diseños web responsivos usando Webflow.
+            - listitem [ref=e428]: Implementación de soluciones personalizadas con JavaScript.
+            - listitem [ref=e429]: Resolución de problemas complejos de interfaces e interacciones.
+            - listitem [ref=e430]: Mejora de rendimiento y compatibilidad entre navegadores.
+            - listitem [ref=e431]: Aplicación de principios UX para mejorar la usabilidad.
+          - generic [ref=e432]:
+            - generic [ref=e433]: Webflow
+            - generic [ref=e434]: JavaScript
+            - generic [ref=e435]: HTML
+            - generic [ref=e436]: CSS
+      - generic [ref=e441]:
+        - generic [ref=e442]:
+          - text: Ponte en Contacto
+          - heading "Construyamos algo increíble" [level=2] [ref=e443]:
+            - text: Construyamos
+            - generic [ref=e444]: algo increíble
+          - paragraph [ref=e445]: ¿Tienes un proyecto en mente? Me encantaría escucharlo. Envíame un mensaje y hablemos sobre cómo podemos trabajar juntos.
+        - generic [ref=e446]:
+          - generic [ref=e448]:
+            - generic [ref=e449]:
+              - generic [ref=e450]: Nombre
+              - textbox "Nombre" [ref=e451]:
+                - /placeholder: Tu nombre ...
+              - generic: "** **"
+            - generic [ref=e452]:
+              - generic [ref=e453]: Correo
+              - textbox "Correo" [ref=e454]:
+                - /placeholder: your.email@example.com
+              - generic: "** **"
+            - generic [ref=e455]:
+              - generic [ref=e456]: Hola, estoy interesado en...
+              - textbox "Hola, estoy interesado en..." [ref=e457]:
+                - /placeholder: Hello, I'm interested in...
+              - generic: "** **"
+            - button "Enviar Mensaje" [ref=e458] [cursor=pointer]:
+              - text: Enviar Mensaje
+              - img [ref=e459]
+          - generic [ref=e462]:
+            - generic [ref=e463]:
+              - heading "Información de Contacto" [level=3] [ref=e464]
+              - generic [ref=e465]:
+                - link "Correo alejandrogr01dev@gmail.com" [ref=e466] [cursor=pointer]:
+                  - /url: mailto:alejandrogr01dev@gmail.com?subject=Laboral%20Oportunity%20Portfolio
+                  - img [ref=e468]
+                  - generic [ref=e471]:
+                    - generic [ref=e472]: Correo
+                    - generic [ref=e473]: alejandrogr01dev@gmail.com
+                - link "Teléfono +5356257921" [ref=e474] [cursor=pointer]:
+                  - /url: tel:+5356257921
+                  - img [ref=e476]
+                  - generic [ref=e478]:
+                    - generic [ref=e479]: Teléfono
+                    - generic [ref=e480]: "+5356257921"
+                - link "Ubicación La Palma, Pinar del Rio, Cuba" [ref=e481] [cursor=pointer]:
+                  - /url: https://maps.app.goo.gl/psMBGjKjvd6euCc8A
+                  - img [ref=e483]
+                  - generic [ref=e486]:
+                    - generic [ref=e487]: Ubicación
+                    - generic [ref=e488]: La Palma, Pinar del Rio, Cuba
+            - generic [ref=e489]:
+              - generic [ref=e492]: Actualmente Disponible
+              - paragraph [ref=e493]: Estoy abierto a nuevas oportunidades y proyectos emocionantes. ¡Cuéntame qué necesitas, hablemos!
+    - contentinfo [ref=e494]:
+      - generic [ref=e496]:
+        - generic [ref=e497]:
+          - link "Home" [ref=e499] [cursor=pointer]:
+            - /url: "#hero"
+            - img "<AGR/>" [ref=e501]
+          - generic [ref=e503]:
+            - link "Sobre mí" [ref=e504] [cursor=pointer]:
+              - /url: "#about"
+            - link "Proyectos" [ref=e505] [cursor=pointer]:
+              - /url: "#projects"
+            - link "Certificaciones" [ref=e506] [cursor=pointer]:
+              - /url: "#certifications"
+            - link "Experiencia" [ref=e507] [cursor=pointer]:
+              - /url: "#experience"
+            - link "Contacto" [ref=e508] [cursor=pointer]:
+              - /url: "#contact"
+          - generic [ref=e509]:
+            - link [ref=e510] [cursor=pointer]:
+              - /url: https://github.com/Alejandro-GR01
+              - img [ref=e511]
+            - link [ref=e514] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/alejandro-guzm%C3%A1n-rodr%C3%ADguez-3985b23b3
+              - img [ref=e515]
+        - generic [ref=e519]: © Alejandro Guzmán Rodríguez | Todos los derechos reservados.
+  - region "Notifications alt+T"
