@@ -13,7 +13,7 @@ import LangButton from "./components/LangButton";
 import { useLanguage } from "./i18n";
 
 const App = () => {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   const handleLanguage = () => {
     setLanguage(language === "es" ? "en" : "es");
@@ -34,7 +34,7 @@ const App = () => {
     <>
       <div className="min-h-screen overflow-x-hidden">
         <Navbar />
-        <LangButton language={language} handleLanguage={handleLanguage} />
+        <LangButton language={language} handleLanguage={handleLanguage} ariaLabel={t.a11y.toggleLanguage} />
         <main>
           <Hero />
           <About />

@@ -55,7 +55,7 @@ const Navbar = () => {
         <a
           className="cursor-pointer p-2 hover:scale-102 transition-all duration-300 ease-out outline-primary focus:outline-2 rounded-lg "
           tabIndex={0}
-          aria-label="Home"
+          aria-label={t.a11y.home}
           href="#"
         >
           <picture>
@@ -99,7 +99,7 @@ const Navbar = () => {
         <button
           className=" md:hidden p-2 text-foreground cursor-pointer  outline-primary focus:outline-2 rounded-xl "
           onClick={handleMenu}
-          aria-label="toogle-menu"
+          aria-label={isMobileMenuOpen ? t.a11y.closeMenu : t.a11y.openMenu}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

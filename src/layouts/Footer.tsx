@@ -14,7 +14,7 @@ const Footer = () => {
               <a
                 className="w-fit cursor-pointer focus:outline-0 group"
                 tabIndex={0}
-                aria-label="Home"
+                aria-label={t.a11y.home}
                 href="#hero"
               >
                 <picture>
@@ -52,6 +52,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   key={`social-${index}`}
+                  aria-label={social.name}
                   className="p-2 px rounded-full glass outline-primary hover:bg-primary/10 hover:text-primary hover:outline-1  focus:text-primary focus:outline   transition-all duration-300"
                 >
                   {<social.icon className="w-5 h-5" />}

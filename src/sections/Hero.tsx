@@ -22,7 +22,8 @@ const Hero = () => {
       <div className="absolute inset-0  animate-space">
         <img
           src={heroBg}
-          alt="Hero image"
+          alt=""
+          role="presentation"
           className="w-full h-full object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-linear-to-b from-background/20 via-bac/80 to-background"></div>
@@ -175,6 +176,7 @@ const Hero = () => {
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 animate-fade-in_short animation-delay-900 z-10 ">
         <a
           href="#about"
+          aria-label={t.a11y.scrollDown}
           className="flex flex-col p-1 rounded-lg items-center gap-2 text-muted-foreground hover:text-foreground/80 transition-colors duration-100 ease-out focus:outline-none focus:scale-105 focus:border "
         >
           <p className="text-sm uppercase tracking-wide">Scroll</p>

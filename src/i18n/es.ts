@@ -5,6 +5,14 @@ export const navLinks = [
   { href: "#experience", label: "Experiencia" },
 ];
 
+export const a11y = {
+  home: "Inicio",
+  openMenu: "Abrir menú",
+  closeMenu: "Cerrar menú",
+  toggleLanguage: "Cambiar idioma",
+  scrollDown: "Desplazarse hacia abajo",
+};
+
 export const heroData = {
   badge: "Desarrollador Frontend",
   h1_1: "Convirtiendo",
