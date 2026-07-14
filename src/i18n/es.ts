@@ -10,7 +10,7 @@ export const a11y = {
   openMenu: "Abrir menú",
   closeMenu: "Cerrar menú",
   toggleLanguage: "Cambiar idioma",
-  scrollDown: "Desplazarse hacia abajo",
+  scrollDown: "Scroll",
   skipToContent: "Saltar al contenido",
   logo: "Logo de Alejandro Guzmán",
   footerNav: "Navegación del pie de página",
