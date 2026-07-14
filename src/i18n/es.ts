@@ -11,20 +11,23 @@ export const a11y = {
   closeMenu: "Cerrar menú",
   toggleLanguage: "Cambiar idioma",
   scrollDown: "Desplazarse hacia abajo",
+  skipToContent: "Saltar al contenido",
+  logo: "Logo de Alejandro Guzmán",
+  footerNav: "Navegación del pie de página",
 };
 
 export const heroData = {
-  badge: "Desarrollador Frontend",
+  badge: "Desarrollador Frontend con IA",
   h1_1: "Convirtiendo",
   h1_span1: "ideas",
-  h1_2: "en web modernas",
-  h1_span2: "experiencias.",
+  h1_2: "en experiencias de web",
+  h1_span2: "modernas.",
   intro_1: "Hola, soy",
   intro_bold1: "Alejandro Guzmán",
   intro_2:
     ". Construyo aplicaciones web escalables y de alto rendimiento usando React y TypeScript.",
   follow_title: "Sígueme:",
-  exp_time: "5+",
+  exp_time: "7+",
   exp_span: "Meses de Exp.",
   exp_available: "Disponible para trabajar",
   tech_title: "Tecnologías con las que trabajo",
@@ -43,12 +46,11 @@ export const aboutData = {
   h2_span: "un componente a la vez.",
   p1_1: "Soy un Desarrollador Frontend con formación en",
   p1_span: "Ingeniería en Electrónica y Telecomunicaciones",
-  p1_2:
-    ", apasionado por el desarrollo web y las experiencias digitales modernas.",
-  p2: "Disfruto construyendo interfaces responsivas e interactivas usando tecnologías como React, TypeScript, JavaScript y Tailwind CSS, con un fuerte enfoque en rendimiento, usabilidad y código limpio.",
-  p3: "También me fascinan los avances en inteligencia artificial y disfruto explorar cómo estas tecnologías pueden ampliar mis conocimientos y mejorar la forma en que construimos soluciones digitales.",
+  p1_2: ", especializado en el desarrollo asistido por IA.",
+  p2: "Construyo interfaces responsivas e interactivas con React, TypeScript y Tailwind CSS, potenciando mi flujo de trabajo con agentes de IA personalizados y servidores MCP para acelerar la entrega de soluciones escalables.",
+  p3: "Mi enfoque combina código limpio, rendimiento óptimo y la inteligencia artificial para resolver problemas complejos de forma eficiente.",
   mission:
-    "Mi misión es crecer continuamente como desarrollador, crear aplicaciones web de alta calidad y evolucionar hacia convertirme en un Desarrollador Full Stack.",
+    "Mi misión es evolucionar continuamente como desarrollador, crear aplicaciones web de alta calidad y liderar la integración de IA en el desarrollo frontend moderno.",
 };
 
 export const projectData = {
@@ -56,6 +58,8 @@ export const projectData = {
   h2_1: "Proyectos que",
   h2_span: "generan impacto",
   desc: "Una selección de mi trabajo reciente, desde aplicaciones web complejas hasta herramientas innovadoras que resuelven problemas reales.",
+  clientWork: "Proyecto Privado",
+  aiPowered: "Potenciado por IA",
 };
 
 export const certificationData = {
@@ -82,7 +86,8 @@ export const contactData = {
   form_email_placeholder: "tu.email@ejemplo.com",
   form_email__required: "El correo es obligatorio",
   form_email__invalid: "Correo inválido",
-  from_message: "Hola, estoy interesado en...",
+  form_message: "Mensaje",
+  form_message_placeholder: "Hola, estoy interesado en...",
   contact_title: "Información de Contacto",
   form_message__required: "¡El mensaje es obligatorio!",
   toast_success: "Mensaje enviado correctamente. Te responderé pronto.",
@@ -106,15 +111,20 @@ export const footerLinks = [
 
 export const projects = [
   {
+    title: "Menú QR",
+    description:
+      "Menú digital offline-first para restaurante con cortes de internet frecuentes. Migración de app web a Electron — Express embebido + SQLite, menú público responsive desde celulares en WiFi. Panel admin: CRUD con drag & drop, promociones flotantes, QR dinámico. Todo editable en tiempo real. En producción en restaurante local.",
+  },
+  {
     title: "Beats 3",
     description:
       "Landing page responsiva de producto inspirada en Beats, enfocada en diseño UI moderno, layouts estructurados y presentación clara del producto.",
   },
-  {
-    title: "GPT-3",
-    description:
-      "Landing page responsiva inspirada en GPT-3 y plataformas de IA, enfocada en estructura UI limpia, secciones de contenido organizadas y diseño frontend moderno.",
-  },
+  // {
+  //   title: "GPT-3",
+  //   description:
+  //     "Landing page responsiva inspirada en GPT-3 y plataformas de IA, enfocada en estructura UI limpia, secciones de contenido organizadas y diseño frontend moderno.",
+  // },
   {
     title: "MacBook Pro",
     description:
@@ -140,19 +150,32 @@ export const highlightsAbout = [
   },
   {
     title: "Colaboración",
-    description: "Trabajar de cerca con los equipos para hacer realidad las ideas.",
+    description:
+      "Trabajar de cerca con los equipos para hacer realidad las ideas.",
   },
   {
-    title: "Innovación",
+    title: "Desarrollo con IA",
     description:
-      "Mantenerse a la vanguardia con las últimas tecnologías y mejores prácticas.",
+      "Potenciar el flujo de trabajo con agentes de IA y automatización inteligente.",
   },
 ];
 
 export const experiences = [
   {
+    role: "Desarrollador Freelance",
+    period: "3/2026 - Presente",
+    description: [
+      "Diseño y desarrollo de app de escritorio offline-first para restaurante con Electron, React, Express y SQLite",
+      "Migración de app web a Electron con arquitectura offline-first para resolver cortes de internet frecuentes",
+      "Implementación de panel admin con JWT, CRUD drag & drop, promociones flotantes y QR dinámico",
+      "Menú público responsive accesible desde celulares vía WiFi local",
+      "Edición en tiempo real de carta, logo, productos, categorías y promociones",
+      "App en producción y operando en restaurante local",
+    ],
+  },
+  {
     role: "Desarrollador Frontend",
-    period: "2025-2026 (6 Meses)",
+    period: "08/2025 - 02/2026",
     description: [
       "Desarrollo de diseños web responsivos usando Webflow.",
       "Implementación de soluciones personalizadas con JavaScript.",
@@ -165,9 +188,14 @@ export const experiences = [
 
 export const certifications = [
   {
-    name: "Iniciación al desarrollo con IA",
+    name: "Iniciación al desarrollo con IA: Programa con Agentes",
     description:
-      "Curso enfocado en el desarrollo real con tecnologías de IA y mejores prácticas en Ingeniería de Software con Agentes de IA en el momento actual.",
+      "Curso especializado en programación con agentes de IA. Aprende a integrar agentes en tu entorno de desarrollo, configurar reglas, Skills y MCPs, gestionar memoria persistente y aplicar Spec-Driven Development para construir software de forma autónoma y escalable.",
+  },
+  {
+    name: "Iniciación al desarrollo con IA: de 0 a Producción",
+    description:
+      "Curso que te enseña a usar la IA como tu copiloto de desarrollo. Aprende a crear prompts profesionales, integrar IA en tu editor de código, auditar lo que genera la IA y llevar tu proyecto a producción sin perder el control técnico.",
   },
   {
     name: "TanStack Query",

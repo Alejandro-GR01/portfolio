@@ -11,35 +11,41 @@ const Experience = () => {
   const expRef = useRef(null);
   const ctxRef = useRef<gsap.Context | null>(null);
   const hasMounted = useRef(false);
-  const mergedExperiences = experiences.map((exp, i) => ({ ...exp, ...t.experiences[i] }));
+  const mergedExperiences = experiences.map((exp, i) => ({
+    ...exp,
+    ...t.experiences[i],
+  }));
 
   // Mount only — no dependencies
-  useGSAP(() => {
-    ctxRef.current = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger);
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#experience",
-          start: "top 80%",
-        },
+  useGSAP(
+    () => {
+      ctxRef.current = gsap.context(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#experience",
+            start: "top 80%",
+          },
+        });
+
+        tl.from("#experience .container .max-w-3xl ", {
+          opacity: 0,
+          y: 300,
+          duration: 1,
+
+          ease: "power2.out",
+        }).from(".experience-container ", {
+          opacity: 0,
+          y: 200,
+          delay: -0.5,
+          duration: 0.9,
+
+          ease: "power2.out",
+        });
       });
-
-      tl.from("#experience .container .max-w-3xl ", {
-        opacity: 0,
-        y: 300,
-        duration: 1,
-
-        ease: "power2.out",
-      }).from(".experience-container ", {
-        opacity: 0,
-        y: 200,
-        delay: -0.5,
-        duration: 0.9,
-
-        ease: "power2.out",
-      });
-    });
-  }, { scope: expRef });
+    },
+    { scope: expRef },
+  );
 
   // Language change — skip initial mount via hasMounted guard
   useEffect(() => {
@@ -93,22 +99,20 @@ const Experience = () => {
               {t.experienceData.h2_span}
             </span>
           </h2>
-
-        
         </div>
 
         <div className="relative experience-container">
-          <div className="my-1 timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0  w-0.5 bg-linear-to-b from-primary/70 via-primary/40 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)] " />
+          <div className="my-1 absolute left-0 md:left-1/2 top-0 bottom-0  w-0.5 bg-linear-to-b from-primary/70 via-primary/40 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)] " />
 
-          <div className="absolute left-0 md:left-1/2 bottom-0 w-3 h-3 bg-radial  from-secundary to-secunday/50 rounded-full -translate-x-1/2 ring-4 ring-background/30 z-10  "></div>
+          <div className="absolute left-0 md:left-1/2 bottom-0 w-3 h-3 bg-radial  from-secundary to-secundary/50 rounded-full -translate-x-1/2 ring-4 ring-background/30 z-10  "></div>
 
           <div className="space-y-12">
             {mergedExperiences.map((exp, index) => (
               <div key={index} className="relative grid md:grid-cols-2 gap-8 ">
                 {/* timeline dot */}
-                <div className="testimony absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-radial from-primary to-primary/80 rounded-full -translate-x-1/2 ring-4 ring-background/50  z-10  ">
+                <div className={`absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-radial from-primary to-primary/70 rounded-full -translate-x-1/2 ring-4 ring-background/50  z-10 ${exp.current && "to-primary"} `}>
                   {exp.current && (
-                    <span className="absolute inset-0 bg-primary rounded-full animate-ping opacity-80 z-20" />
+                    <span className="absolute inset-0 bg-primary rounded-full animate-ping opacity-90 z-20" />
                   )}
                 </div>
 
@@ -116,7 +120,7 @@ const Experience = () => {
                   className={`pl-8 md:pl-0 ${index % 2 === 0 ? "md:col-start-2 md:pl-16" : "  md:pr-16 "}`}
                 >
                   <div
-                    className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transiion-all duration-500 `}
+                    className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500 `}
                   >
                     <span className="text-sm text-primary font-medium">
                       {exp.period}

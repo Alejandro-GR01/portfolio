@@ -11,34 +11,40 @@ const Certifications = () => {
   const certificationRef = useRef(null);
   const ctxRef = useRef<gsap.Context | null>(null);
   const hasMounted = useRef(false);
-  const mergedCertifications = certifications.map((cert, i) => ({ ...cert, ...t.certifications[i] }));
-  useGSAP(() => {
-    ctxRef.current = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger);
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#certifications",
-          start: "top 80%",
-        },
+  const mergedCertifications = certifications.map((cert, i) => ({
+    ...cert,
+    ...t.certifications[i],
+  }));
+  useGSAP(
+    () => {
+      ctxRef.current = gsap.context(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#certifications",
+            start: "top 80%",
+          },
+        });
+
+        tl.from("#certifications .text-center.mx-auto ", {
+          opacity: 0,
+          duration: 0.9,
+
+          ease: "power2.out",
+        }).from("#certifications a.group.glass", {
+          opacity: 0,
+          y: 200,
+          scale: 0.6,
+          stagger: 0.2,
+          delay: -0.9,
+          duration: 0.9,
+
+          ease: "power2.out",
+        });
       });
-
-      tl.from("#certifications .text-center.mx-auto ", {
-        opacity: 0,
-        duration: 0.9,
-
-        ease: "power2.out",
-      }).from("#certifications a.group.glass", {
-        opacity: 0,
-        y: 200,
-        scale: 0.6,
-        stagger: 0.2,
-        delay: -0.9,
-        duration: 0.9,
-
-        ease: "power2.out",
-      });
-    });
-  }, { scope: certificationRef });
+    },
+    { scope: certificationRef },
+  );
 
   useEffect(() => {
     if (!hasMounted.current) {
@@ -84,7 +90,7 @@ const Certifications = () => {
         <div className="absolute top-20 right-1/5 w-96 h-64 bg-highlight/10  rounded-full blur-3xl " />
       </div>
       <div
-        id="contact-wrapper"
+        id="certifications-wrapper"
         className="container mx-auto px-6 relative z-10"
       >
         <div className=" text-center mx-auto max-w-3xl mb-16">
@@ -94,7 +100,7 @@ const Certifications = () => {
           <h2 className="text-4xl  md:text-5xl font-bold mt-4 mb-6  text-secundary-foreground">
             {t.certificationData.h2_1}
             <span
-              className="font-serif italic fornt-normal
+              className="font-serif italic font-normal
              text-white"
             >
               {" "}
@@ -109,28 +115,31 @@ const Certifications = () => {
               target="_blank"
               rel="noopener noreferrer"
               href={certif.link}
+              aria-label={`${certif.name} - ${certif.school}`}
               className={`group glass flex flex-col outline-primary focus:outline-2 items-between rounded-2xl overflow-hidden col-span-9 ${index % 4 === 0 || index % 3 == 0 ? " lg:col-span-5" : " lg:col-span-4"} ${index === mergedCertifications.length - 1 && mergedCertifications.length % 2 !== 0 && "lg:col-span-9 "}  `}
               style={{
                 animationDelay: `${(index + 1) * 100}ms`,
               }}
             >
               {/* Images */}
-              <div className={` relative overflow-hidden  h-[40svh] md:h-[45svh] `}>
+              <div
+                className={` relative overflow-hidden  h-[40svh] md:h-[45svh] `}
+              >
                 <picture>
                   <source srcSet={certif.imageAvif} type="image/avif" />
                   <img
-                  loading="lazy"
+                    loading="lazy"
                     src={certif.imagePng}
                     alt={certif.name}
                     className="w-full h-full object-cover transition-transform duration-700 "
                   />
                 </picture>
-                <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to bg-transparent opacity-40 group-hover:opacity-90 group-focus:opacity-100  transition-opacity duration-500 " />
+                <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent opacity-40 group-hover:opacity-90 group-focus:opacity-100  transition-opacity duration-500 " />
               </div>
 
               {/* Content */}
               <div
-                className={`p-6 transition-all duration-500 glass group-hover:h-auto absolute -bottom-50 opacity-0 group-hover:opacity-100 group-hover:bottom-0.5 group-focus:opacity-100 group-focus:bottom-0 -left-0.5 -right-0.5  space-y-4 shrink-0 grow flex flex-col justify-between`}
+                className={`p-6 transition-all duration-500 glass group-hover:h-auto absolute -bottom-50 opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-focus:opacity-100 group-focus:bottom-0 -left-0.5 -right-0.5  space-y-4 shrink-0 grow flex flex-col justify-between`}
               >
                 <div className="flex flex-col gap-2">
                   <div className="flex items-start justify-between">

@@ -9,11 +9,10 @@ const Footer = () => {
     <footer className=" overflow-hidden">
       <div className="py-6 border-t border-border">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className=" flex flex-col gap-4 text-center md:text-left shrink-0">
+          <div className="flex flex-col xl:flex-row items-center justify-between gap-8">
+            <div className=" flex flex-col items-center gap-4 text-center xl:text-left shrink-0">
               <a
                 className="w-fit cursor-pointer focus:outline-0 group"
-                tabIndex={0}
                 aria-label={t.a11y.home}
                 href="#hero"
               >
@@ -21,21 +20,21 @@ const Footer = () => {
                   <source srcSet={logoAvif} type="image/avif" />
                   <img
                     src={logoPng}
-                    alt="<AGR/>"
+                    alt={t.a11y.logo}
                     className="h-9   p-1 drop-shadow-lg/30  drop-shadow-primary  group-focus:outline rounded-lg outline-primary"
                   />
                 </picture>
               </a>
-              <div className="hidden lg:block text-foreground/70 text-sm">
+              <div className="hidden xl:block text-foreground/70 text-sm">
                 <span>{t.footerData.copyright} </span>
               </div>
             </div>
 
-            <div className=" flex  items-center gap-1 ">
+            <nav className=" flex  items-center gap-1 " aria-label={t.a11y.footerNav}>
               <div className=" rounded-full px-2 py-1 flex flex-col md:flex-row items-center gap-1.5 ">
                 {t.footerLinks.map((link, index) => (
                   <a
-                    className="px-16 py-2 md:px-6 w-full text-center md:w-fit text-lg md:text-sm  text-muted-foreground rounded-full transition-all duration-200 focus:outline-primary focus:outline-1 hover:text-foreground hover:bg-surface focus:text-foreground focus:bg-surface "
+                    className="shrink-0 px-16 py-2 md:px-6 w-full text-center md:w-fit text-lg md:text-sm  text-muted-foreground rounded-full transition-all duration-200 focus:outline-primary focus:outline-1 hover:text-foreground hover:bg-surface focus:text-foreground focus:bg-surface "
                     key={index}
                     href={link.href}
                   >
@@ -43,7 +42,8 @@ const Footer = () => {
                   </a>
                 ))}
               </div>
-            </div>
+            </nav>
+
             {/* Social Links */}
             <div className="flex  items-center gap-8 md:gap-4 ">
               {socialLinks.map((social, index) => (
@@ -60,7 +60,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="block lg:hidden text-center text-foreground/70 text-sm mt-4 pt-7 pb-2 border-t border-border">
+          <div className="block xl:hidden text-center text-foreground/70 text-sm mt-4 pt-7 pb-2 border-t border-border">
             <span>{t.footerData.copyright}</span>
           </div>
         </div>

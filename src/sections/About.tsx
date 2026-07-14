@@ -105,7 +105,7 @@ const About = () => {
                 key={index}
                 className="glass group p-6 rounded-2xl group relative z-10 overflow-hidden"
                 style={{
-                  animationDelay: `${(index + 1) * 100} * ms`,
+                  animationDelay: `${(index + 1) * 100}ms`,
                 }}
               >
                 <div className="absolute -bottom-1/5 right-0 w-1/4 h-3/5 bg-primary/25 blur-3xl rounded-full group-hover:w-1/2 group-hover:h-4/5 transition-transform duration-300 ease-out" />

@@ -46,6 +46,7 @@ Portafolio profesional minimalista que showcasea:
 | 🎬 GSAP Animations | Animaciones ScrollTrigger en secciones |
 | 📧 Contact Form | Formulario funcional con EmailJS |
 | 📱 Fully Responsive | Mobile-first design |
+| 🌐 i18n (ES/EN) | Toggle de idioma con Zustand persist |
 | 🖥️ Hero Section | Presentación con foto de perfil y badges |
 | 💼 Projects | Cards de proyectos con tags y enlaces |
 | 📜 Experience | Timeline profesional de experiencia |
@@ -72,7 +73,7 @@ Portafolio profesional minimalista que showcasea:
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/tuusuario/portfolio.git
+git clone https://github.com/Alejandro-GR01/portfolio.git
 
 # Entrar al proyecto
 cd portfolio
@@ -109,7 +110,6 @@ VITE_EMAILJS_PUBLIC_KEY=tu_public_key
 ```
 src/
 ├── components/
-│   ├── AnimatedBorderAnchor.tsx
 │   ├── AnimatedBorderButton.tsx
 │   ├── Button.tsx
 │   ├── ButtonAnchor.tsx
@@ -117,6 +117,11 @@ src/
 │   └── TagLabel.tsx
 ├── constants/
 │   └── index.ts          # Datos estáticos (proyectos, skills, experiencia)
+├── i18n/
+│   ├── es.ts             # Traducciones ES
+│   ├── en.ts             # Traducciones EN
+│   ├── store.ts          # Zustand persist store
+│   └── index.ts          # useLanguage() hook
 ├── layouts/
 │   ├── Footer.tsx
 │   └── Navbar.tsx
@@ -126,8 +131,8 @@ src/
 │   ├── Contact.tsx
 │   ├── Experience.tsx
 │   ├── Hero.tsx
-│   └── Projects.tsx
-│   
+│   ├── Projects.tsx
+│   └── Testimonials.tsx  # Comentado en App.tsx
 ├── types/
 │   └── index.ts          # Interfaces TypeScript
 ├── App.tsx
@@ -150,7 +155,7 @@ Optimizado para:
 
 ## 🎨 Características del Diseño
 
-- **Dark Theme** con accent en cyan (#20B2A6)
+- **Dark Theme** con accent en teal (#1a968b)
 - **Glassmorphism** en cards y elementos flotantes
 - **Marquee animation** para habilidades técnicas
 - **Scroll-triggered animations** con GSAP
@@ -176,7 +181,7 @@ El formulario utiliza **EmailJS** para enviar mensajes. Para activarlo:
 - [ ] Integrar blog técnico
 - [ ] Modo claro/oscuro
 - [ ] Animaciones 3D con Three.js
-- [ ] Optimización SEO
+- [x] SEO (robots.txt + sitemap.xml)
 - [ ] Tests automatizados
 
 ---

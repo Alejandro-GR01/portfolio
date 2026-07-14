@@ -22,8 +22,10 @@ export type Project = {
   imagePng: string;
   imageAvif: string;
   tags: string[];
-  link: string,
-  github: string
+  link?: string;
+  github?: string;
+  proprietary?: boolean;
+  ai_powered?: boolean;
 };
 
 export type Experience= {

@@ -19,7 +19,7 @@ const Button = ({className ="", size ="default", children, type='button' , disab
         lg: "px-8 py-4 text-lg", 
     }
 
-    const classes = `${baseClasses} ${sizeClasses[size]} ${className!}`
+    const classes = `${baseClasses} ${sizeClasses[size]} ${className}`
   return (
    <button type={type} className={`relative  flex items-center justify-center gap-2  ${classes}`} disabled={disabled} onClick={onClick}>
     {children}

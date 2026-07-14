@@ -11,10 +11,13 @@ export const a11y = {
   closeMenu: "Close menu",
   toggleLanguage: "Toggle language",
   scrollDown: "Scroll down",
+  skipToContent: "Skip to content",
+  logo: "Alejandro Guzmán Logo",
+  footerNav: "Footer navigation",
 };
 
 export const heroData = {
-  badge: "Frontend Developer",
+  badge: "AI-Powered Frontend Developer",
   h1_1: "Turning",
   h1_span1: "ideas",
   h1_2: "into modern web",
@@ -24,7 +27,7 @@ export const heroData = {
   intro_2:
     ". I build scalable and high-performance web applications using React and TypeScript.",
   follow_title: "Follow me:",
-  exp_time: "5+",
+  exp_time: "7+",
   exp_span: "Months Exp.",
   exp_available: "Available for work",
   tech_title: "Technologies I work with",
@@ -43,11 +46,11 @@ export const aboutData = {
   h2_span: "one component at a time.",
   p1_1: "I'm a Frontend Developer with a background in",
   p1_span: "Electronics and Telecommunications Engineering",
-  p1_2: ", passionate about web development and modern digital experiences.",
-  p2: "I enjoy building responsive and interactive interfaces using technologies like React, TypeScript, JavaScript, and Tailwind CSS, with a strong focus on performance, usability, and clean code.",
-  p3: "I'm also fascinated by the advances in artificial intelligence and enjoy exploring how these technologies can expand my knowledge and improve the way we build digital solutions.",
+  p1_2: ", specialized in AI-assisted development.",
+  p2: "I build responsive, interactive interfaces with React, TypeScript, and Tailwind CSS, supercharging my workflow with custom AI agents and MCP servers to deliver scalable solutions faster.",
+  p3: "My approach combines clean code, optimal performance, and artificial intelligence to solve complex problems efficiently.",
   mission:
-    "My mission is to continuously grow as a developer, build high-quality web applications, and evolve toward becoming a Full Stack Developer.",
+    "My mission is to continuously evolve as a developer, build high-quality web applications, and lead the integration of AI in modern frontend development.",
 };
 
 export const projectData = {
@@ -55,6 +58,8 @@ export const projectData = {
   h2_1: "Projects that",
   h2_span: "make an impact",
   desc: "A selection of my recent work, form complex web applications to innovative tools that solve real-word problems.",
+  clientWork: "Client Work",
+  aiPowered: "AI-Powered",
 };
 
 export const certificationData = {
@@ -81,7 +86,8 @@ export const contactData = {
   form_email_placeholder: "your.email@example.com",
   form_email__required: "Email required",
   form_email__invalid: "Invalid Email",
-  from_message: "Hello, I'm interested in...",
+  form_message: "Message",
+  form_message_placeholder: "Hello, I'm interested in...",
   contact_title: "Contact Information",
   form_message__required: "The message is required!",
   toast_success: "Message sent successfully. I'll get back to you soon.",
@@ -105,15 +111,20 @@ export const footerLinks = [
 
 export const projects = [
   {
+    title: "Menu QR",
+    description:
+      "Offline-first digital menu for restaurants with frequent internet outages. Migration of web app to Electron — embedded Express + SQLite, responsive public menu from phones on WiFi. Admin panel: CRUD with drag & drop, floating promotions, dynamic QR. Everything editable in real time. Running in production at a local restaurant.",
+  },
+  {
     title: "Beats 3",
     description:
       "Responsive product landing page inspired by Beats headphones, focused on modern UI design, structured layouts, and clear product presentation.",
   },
-  {
-    title: "GPT-3",
-    description:
-      "Responsive landing page inspired by GPT-3 and AI platforms, focused on clean UI structure, organized content sections, and modern frontend design.",
-  },
+  // {
+  //   title: "GPT-3",
+  //   description:
+  //     "Responsive landing page inspired by GPT-3 and AI platforms, focused on clean UI structure, organized content sections, and modern frontend design.",
+  // },
   {
     title: "MacBook Pro",
     description:
@@ -135,23 +146,35 @@ export const highlightsAbout = [
   {
     title: "Performance",
     description:
-      "Optimizing for speed and delivering lightning-fast user-experiences.",
+      "Optimizing for speed and delivering lightning-fast user experiences.",
   },
   {
     title: "Collaboration",
     description: "Working closely with teams to bring ideas to life.",
   },
   {
-    title: "Innovation",
+    title: "AI Development",
     description:
-      "Staying ahead with the latest technologies and best practices.",
+      "Supercharging workflows with AI agents and intelligent automation.",
   },
 ];
 
 export const experiences = [
   {
+    role: "Freelance Developer",
+    period: "3/2026 - Present",
+    description: [
+      "Design and development of offline-first desktop app for restaurants with Electron, React, Express and SQLite",
+      "Migration of web app to Electron with offline-first architecture to solve frequent internet outages",
+      "Implementation of admin panel with JWT, drag & drop CRUD, floating promotions and dynamic QR",
+      "Responsive public menu accessible from phones via local WiFi",
+      "Real-time editing of menu, logo, products, categories and promotions",
+      "App in production and running at a local restaurant",
+    ],
+  },
+  {
     role: "Frontend Developer",
-    period: "2025-2026 (6 Months)",
+    period: "08/2025 - 02/2026",
     description: [
       "Development of responsive web layouts using Webflow.",
       "Implementation of custom JavaScript solutions.",
@@ -164,9 +187,14 @@ export const experiences = [
 
 export const certifications = [
   {
-    name: "Initiation to AI development",
+    name: "Initiation to AI development: Agent Programming",
     description:
-      "Course focus to the real developments AI technologies and best practices in the Software Ingeniering whit AI Agents to the actual moment.",
+      "Specialized course on programming with AI agents. Learn to integrate agents into your development environment, configure rules, Skills and MCPs, manage persistent memory and apply Spec-Driven Development to build software autonomously and at scale.",
+  },
+  {
+    name: "Initiation to AI development: from 0 to Production",
+    description:
+      "Course that teaches you to use AI as your development copilot. Learn to create professional prompts, integrate AI into your code editor, audit what AI generates and take your project to production without losing technical control.",
   },
   {
     name: "TanStack Query",

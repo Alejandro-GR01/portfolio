@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 
 import { useLanguage } from "../i18n";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import logoPng from "/portfolio-logo.png";
 import logoAvif from "/portfolio-logo.avif";
 
@@ -10,20 +10,23 @@ import ButtonAnchor from "../components/ButtonAnchor";
 const Navbar = () => {
   const { t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleMenu = (e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  const handleMenu = useCallback((e?: React.MouseEvent<HTMLElement, MouseEvent>) => {
     if (e) {
       e.stopPropagation();
     }
 
-    if (isMobileMenuOpen) {
-      setIsMobileMenuOpen(false);
-    } else {
-      setIsMobileMenuOpen(true);
+    setIsMobileMenuOpen((prev) => !prev);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen && menuButtonRef.current) {
+      menuButtonRef.current.focus();
     }
-  };
+  }, [isMobileMenuOpen]);
 
   const handleEsc = (e: React.KeyboardEvent<HTMLElement>) => {
     if (e.code === "Escape") {
@@ -54,7 +57,6 @@ const Navbar = () => {
       >
         <a
           className="cursor-pointer p-2 hover:scale-102 transition-all duration-300 ease-out outline-primary focus:outline-2 rounded-lg "
-          tabIndex={0}
           aria-label={t.a11y.home}
           href="#"
         >
@@ -64,7 +66,7 @@ const Navbar = () => {
             fetchPriority="high"
             loading="eager"
               src={logoPng}
-              alt="<AGR/>"
+              alt={t.a11y.logo}
               className="w-auto h-7 md:h-9 drop-shadow-lg/30  drop-shadow-primary "
             />
           </picture>
@@ -97,9 +99,11 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
+          ref={menuButtonRef}
           className=" md:hidden p-2 text-foreground cursor-pointer  outline-primary focus:outline-2 rounded-xl "
           onClick={handleMenu}
           aria-label={isMobileMenuOpen ? t.a11y.closeMenu : t.a11y.openMenu}
+          aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -115,7 +119,6 @@ const Navbar = () => {
                 key={index}
                 href={link.href}
                 onClick={handleMenu}
-                onKeyDown={handleEsc}
               >
                 {link.label}
               </a>
@@ -131,7 +134,7 @@ const Navbar = () => {
         </div>
         {isMobileMenuOpen && (
           <div
-            className="absolute z-10 bg-trasparent  top-0 left-0 right-0 h-svh "
+            className="absolute z-10 bg-transparent  top-0 left-0 right-0 h-svh "
             onClick={handleMenu}
           />
         )}

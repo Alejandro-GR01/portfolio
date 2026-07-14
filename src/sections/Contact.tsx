@@ -50,7 +50,7 @@ const Contact = () => {
           "EmailJS configuration is missing. Please check your environment variables.",
         );
       }
-      const time = new Date(Date.now()).toLocaleString()
+      const time = new Date().toLocaleString()
       
       await emailjs.send(
         serviceId,
@@ -144,12 +144,14 @@ const Contact = () => {
                   type="text"
                   id="name"
                   placeholder={t.contactData.form_name__placeholder}
+                  aria-invalid={!!errors.name}
+                  aria-describedby={errors.name ? "name-error" : undefined}
                   className={`w-full px-4 py-3 bg-surface rounded-xl border border-border ${errors.name && "border-primary outline outline-primary"} focus:border-primary focus:outline-1   outline-primary transition-all ease-in `}
                   {...register("name", {
                     required: t.contactData.form_name__required,
                   })}
                 />
-                <ErrorMessage>{errors.name?.message}</ErrorMessage>
+                <ErrorMessage id="name-error">{errors.name?.message}</ErrorMessage>
               </div>
               <div>
                 <label
@@ -162,6 +164,8 @@ const Contact = () => {
                   type="email"
                   id="email"
                   placeholder={t.contactData.form_email_placeholder}
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? "email-error" : undefined}
                   className={`w-full px-4 py-3 bg-surface rounded-xl border border-border ${errors.email && "border-primary outline outline-primary"} focus:border-primary focus:outline-1   outline-primary transition-all ease-in `}
                   {...register("email", {
                     required: t.contactData.form_email__required,
@@ -171,26 +175,28 @@ const Contact = () => {
                     },
                   })}
                 />
-                <ErrorMessage>{errors.email?.message}</ErrorMessage>
+                <ErrorMessage id="email-error">{errors.email?.message}</ErrorMessage>
               </div>
               <div>
                 <label
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
                 >
-                  {t.contactData.from_message}
+                  {t.contactData.form_message}
                 </label>
 
                 <textarea
                   rows={5}
                   id="message"
-                  placeholder={t.contactData.from_message}
-                  className={`m-0! w-full px-4 py-3 bg-surface rounded-xl border border-border  ${errors.email && "border-primary outline outline-primary"} focus:border-primary focus:outline-1   outline-primary transition-all ease-in resize-none `}
+                  placeholder={t.contactData.form_message_placeholder}
+                  aria-invalid={!!errors.message}
+                  aria-describedby={errors.message ? "message-error" : undefined}
+                  className={`m-0! w-full px-4 py-3 bg-surface rounded-xl border border-border  ${errors.message && "border-primary outline outline-primary"} focus:border-primary focus:outline-1   outline-primary transition-all ease-in resize-none `}
                   {...register("message", {
                     required: t.contactData.form_message__required,
                   })}
                 />
-                <ErrorMessage>{errors.message?.message}</ErrorMessage>
+                <ErrorMessage id="message-error">{errors.message?.message}</ErrorMessage>
               </div>
 
               <Button

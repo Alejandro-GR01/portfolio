@@ -8,11 +8,16 @@ import profilFotoAvif from "/profile-photo.avif";
 import ButtonAnchor from "../components/ButtonAnchor";
 import AnimatedBorderAnchor from "../components/AnimatedBorderAnchor";
 
+import CVES from "/CV_es.pdf";
+import CVEN from "/CV_en.pdf";
+
 const Hero = () => {
   const { language, t } = useLanguage();
-  const cvPath = language === "es" ? "/CV_es.pdf" : "/CV_en.pdf";
+  const cvPath = language === "es" ? CVES : CVEN;
   const cvDownloadName =
-    language === "es" ? "Alejandro_Guzman_CV_ES.pdf" : "Alejandro_Guzman_CV_EN.pdf";
+    language === "es"
+      ? "Alejandro_Guzman_CV_ES.pdf"
+      : "Alejandro_Guzman_CV_EN.pdf";
   return (
     <section
       id="hero"
@@ -26,7 +31,7 @@ const Hero = () => {
           role="presentation"
           className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-bac/80 to-background"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background"></div>
       </div>
 
       <div className="container mx-auto px-6 my-12 py-18 md:pt-32 md:pb-20 relative z-10">
@@ -50,7 +55,7 @@ const Hero = () => {
                 <br />
                 {t.heroData.h1_2}{" "}
                 <span className="text-primary glow-text  animate-glow-shutDown">
-                 {t.heroData.h1_span2}
+                  {t.heroData.h1_span2}
                 </span>
                 <br />
                 {/* <span className="font-serif italic font-normal text-white">
@@ -73,13 +78,11 @@ const Hero = () => {
                 className="flex gap-0 hover:gap-4 hover:pr-6 group-focus:gap-4 group-focus:pr-6"
                 href="#contact"
               >
-                {t.buttonText.contact}<LucideArrowRight className="w-5 h-5" />
+                {t.buttonText.contact}
+                <LucideArrowRight className="w-5 h-5" />
               </ButtonAnchor>
 
-              <AnimatedBorderAnchor
-                href={cvPath}
-                download={cvDownloadName}
-              >
+              <AnimatedBorderAnchor href={cvPath} download={cvDownloadName}>
                 <LucideDownload className="w-5 h-5" />
                 {t.buttonText.downloadCv}
               </AnimatedBorderAnchor>
@@ -87,14 +90,16 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="flex items-center gap-4 animate-fade-in_short animation-delay-400">
-              <span className="text-sm text-muted-foreground">{t.heroData.follow_title}</span>
+              <span className="text-sm text-muted-foreground">
+                {t.heroData.follow_title}
+              </span>
               {socialLinks.map((social, index) => (
                 <a
                   href={social.href}
                   target="_blank"
                   rel="noreferrer noopener"
                   key={`social-${index}`}
-                  aria-label={`${social.name}-${social.href}`}
+                  aria-label={social.name}
                   className="p-2 rounded-full glass outline-primary hover:bg-primary/10 hover:text-primary hover:outline-1  focus:text-primary focus:outline   transition-all duration-300"
                 >
                   {<social.icon className="w-5 h-5" />}
@@ -115,7 +120,7 @@ const Hero = () => {
                     fetchPriority="high"
                     loading="eager"
                     src={profilFotoPng}
-                    alt="Alejandro Guzman"
+                    alt={t.a11y.logo}
                     className="w-full aspect-4/5 object-cover rounded-2xl"
                   />
                 </picture>
@@ -124,10 +129,10 @@ const Hero = () => {
 
                   <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float ">
                     <div className="text-2xl font-bold text-primary glow-text ">
-                     {t.heroData.exp_time}
+                      {t.heroData.exp_time}
                     </div>
                     <div className="text-xs text-muted-foreground">
-                     {t.heroData.exp_span}
+                      {t.heroData.exp_span}
                     </div>
                   </div>
                   <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
@@ -159,9 +164,9 @@ const Hero = () => {
                 (skill, index) => (
                   <div
                     key={`skill-${index}`}
-                    className="shrink-0 min-w-fit  px-8 py-4"
+                    className="shrink-0 min-w-fit px-8 py-4"
                   >
-                    <span className="text-nowrap text-cl font-semibold text-foreground/40 hover:text-muted-foreground transition-colors ease-in-out duration-200 cursor-default ">
+                    <span className="text-nowrap text-base font-semibold text-foreground/60 hover:text-muted-foreground transition-colors ease-in-out duration-200 cursor-default ">
                       {skill}
                     </span>
                   </div>
@@ -179,7 +184,7 @@ const Hero = () => {
           aria-label={t.a11y.scrollDown}
           className="flex flex-col p-1 rounded-lg items-center gap-2 text-muted-foreground hover:text-foreground/80 transition-colors duration-100 ease-out focus:outline-none focus:scale-105 focus:border "
         >
-          <p className="text-sm uppercase tracking-wide">Scroll</p>
+          <p className="text-sm uppercase tracking-wide">{t.a11y.scrollDown}</p>
           <ChevronDown className="w-6 h-6 animate-bounce " />
         </a>
       </div>

@@ -1,7 +1,7 @@
 import {
+  BrainCircuit,
   Code2,
   Github,
-  Lightbulb,
   Linkedin,
   Mail,
   MapPin,
@@ -20,13 +20,13 @@ import type {
 } from "../types";
 
 import project01Png from "/projects/project01.jpg";
-import project02Png from "/projects/project02.jpg";
 import project03Png from "/projects/project03.jpg";
 import project04Png from "/projects/project04.jpg";
 import project01Avif from "/projects/project01.avif";
-import project02Avif from "/projects/project02.avif";
 import project03Avif from "/projects/project03.avif";
 import project04Avif from "/projects/project04.avif";
+import project05Png from "/projects/project05.png";
+import project05Avif from "/projects/project05.avif";
 
 import certif1Png from "/certifications/certif1.png";
 import certif2Png from "/certifications/certif2.png";
@@ -37,7 +37,9 @@ import certif1Avif from "/certifications/certif1.avif";
 import certif2Avif from "/certifications/certif2.avif";
 import certif3Avif from "/certifications/certif3.avif";
 import certif4Avif from "/certifications/certif4.avif";
-import certif5Avif from "/certifications/certif5.webp";
+import certif5Avif from "/certifications/certif5.avif";
+import certif6Png from "/certifications/certif6.jpeg";
+import certif6Avif from "/certifications/certif6.avif";
 
 import profile01 from "/profile-photo1.jpg";
 
@@ -57,8 +59,6 @@ export const socialLinks: SocialLink[] = [
 export const skills: string[] = [
   "HTML5",
   "CSS",
-  "Sass",
-  "Gulp",
   "JavaScript",
   "PNPM",
   "Tailwind CSS",
@@ -73,31 +73,43 @@ export const skills: string[] = [
   "React Hook Form",
   "NodeJS",
   "Express",
-  // "MongoDB",
-  // "Mongoose",
+  "MongoDB",
+  "Mongoose",
+  "Vite",
+  "PostgreSQL",
+  "Prisma",
+  "NextJS",
+  "OpenCode",
 ];
 
 export const highlightsAbout: HighlightAbout[] = [
   { icon: Code2 },
   { icon: Rocket },
   { icon: Users },
-  { icon: Lightbulb },
+  { icon: BrainCircuit },
 ];
 
 export const projects: Project[] = [
+  {
+    imagePng: project05Png,
+    imageAvif: project05Avif,
+    tags: [
+      "Electron",
+      "React",
+      "Express",
+      "SQLite",
+      "TanStack Query",
+      "Vitest",
+    ],
+    proprietary: true,
+    ai_powered: true,
+  },
   {
     imagePng: project01Png,
     imageAvif: project01Avif,
     tags: ["Vite", "React", "JavaScript", "ESLint", "Tailwind CSS", "GSAP"],
     link: "https://alejandro-gr01.github.io/beats-3-landing/",
     github: "https://github.com/Alejandro-GR01/beats-3-landing",
-  },
-  {
-    imagePng: project02Png,
-    imageAvif: project02Avif,
-    tags: ["Vite", "React", "JavaScript", "ESLint", "Tailwind CSS", "GSAP"],
-    link: "https://alejandro-gr01.github.io/gpt3-landing/",
-    github: "https://github.com/Alejandro-GR01/gpt3-landing",
   },
   {
     imagePng: project03Png,
@@ -126,9 +138,22 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
+    company: "Menu QR",
+    technologies: [
+      "Electron",
+      "React",
+      "Express",
+      "SQLite",
+      "TanStack Query",
+      "JWT",
+      "Vitest",
+    ],
+    current: true,
+  },
+  {
     company: "UXP Programming",
     technologies: ["Webflow", "JavaScript", "HTML", "CSS"],
-    current: true,
+    current: false,
   },
 ];
 
@@ -158,6 +183,13 @@ export const contactInfo: ContactInfo[] = [
 ];
 
 export const certifications: Certification[] = [
+  {
+    school: "MoureDev | BigSchool",
+    imagePng: certif6Png,
+    imageAvif: certif6Avif,
+    link: certif6Png,
+    period: "7/26 - 7/26",
+  },
   {
     school: "MoureDev | BigSchool",
     imagePng: certif5Png,

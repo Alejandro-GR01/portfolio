@@ -9,7 +9,7 @@ type ButtonAnchorProps = {
 
 
 const ButtonAnchor = ({className ="", size ="default", children, href}: ButtonAnchorProps) => {
-    const baseClasses = "relative overflow-hidden rounded-full font-medium focus:outline-none group-focus:outline-none focus-visible:ring-2 group-focus-visible:ring-2 focus-visible:ring-primary group-focus-visible:ring-primary bg-primary text-rimary-foreground hover:bg-primary/90 disabled:hover:bg-primary shadow-lg hover:shadow-xl shadow-primary/25 transition-all duration-200 ease-in"
+    const baseClasses = "relative overflow-hidden rounded-full font-medium focus:outline-none group-focus:outline-none focus-visible:ring-2 group-focus-visible:ring-2 focus-visible:ring-primary group-focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 disabled:hover:bg-primary shadow-lg hover:shadow-xl shadow-primary/25 transition-all duration-200 ease-in"
 
     const sizeClasses = {
         sm: 'px-3 py-2 text-sm',
@@ -17,7 +17,7 @@ const ButtonAnchor = ({className ="", size ="default", children, href}: ButtonAn
         lg: "px-8 py-4 text-lg", 
     }
 
-    const classes = `${baseClasses} ${sizeClasses[size]} ${className!}`
+    const classes = `${baseClasses} ${sizeClasses[size]} ${className}`
   return (
    <a className={`relative  flex items-center justify-center gap-2  ${classes}`} href={href}>
     {children}
