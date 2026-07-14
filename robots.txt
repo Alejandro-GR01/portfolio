@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alejandro-gr01.github.io/portfolio/sitemap.xml
